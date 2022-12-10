@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="./images/icons/logo_black.png">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <link rel="stylesheet" href="./css/elements.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <div class="page-loader">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="archor-hero"></div>
+        <section class="hero">
+            <canvas id='hero-canvas'></canvas>
+            <div>
+                <div class="hero__text">
+                    Hello, I'm <span>Roman Shavala</span>. <br>
+                    I'm front-end developer
+                </div>
+                <div class="hero__wrap-btn">
+                    <a href="#archor-projects">
+                        <button class="hero__btn">View my works
+                            <img src="./images/icons/arrow.png">
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="cont">
+                <div id="archor-projects"></div>
+                <div class="all-titles projects__title">PROJECTS</div>
+                <div class="projects__content"></div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <button class="footer__back">
+                <a href="#archor-hero">⬆⬆⬆</a>
+            </button>
+            <div class="footer__wrap">
+                <i id="ico1">
+                    <a href="#">
+                        <img class="footer_icon" src="./images/icons/github.png">
+                    </a>
+                </i>
+                <i id="ico2">
+                    <a href="#">
+                        <img class="footer_icon" src="./images/icons/instagram.png">
+                    </a>
+                </i>
+                <i id="ico3">
+                    <a href="#">
+                        <img class="footer_icon" src="./images/icons/facebook.png">
+                    </a>
+                </i>
+                <i id="ico4">
+                    <a href="#">
+                        <img class="footer_icon" src="./images/icons/twiter.png">
+                    </a>
+                </i>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src='./js/script.js'></script>
+</body>
+
+</html>

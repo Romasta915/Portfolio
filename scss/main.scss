@@ -1,0 +1,245 @@
+@import "./_normalization.scss";
+@import "./_elements.scss";
+@import "./_scss-tools.scss";
+
+// !!! repetitive styles
+.cont {
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.all-titles {
+    text-align: center;
+    @include fontProcessing('Roboto', 4rem, 400);
+    letter-spacing: 1px;
+    position: relative;
+    padding: 2.5rem 0 1rem 0;
+    margin: 0 0 5rem 0;
+
+    &::after {
+        content: '';
+        width: 8rem;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+// !!! main elemets
+html {
+    scroll-behavior: smooth;
+    color: white;
+}
+
+body {
+    @include fontProcessing('Roboto', 2rem, 400);
+}
+
+body::-webkit-scrollbar-track {
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(27, 36, 47);
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+// !!! elements code
+.page-loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 8, 8, 0.9);
+    z-index: 999;
+}
+
+#hero-canvas {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    z-index: -1;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__text {
+        @include fontProcessing('Roboto Mono', 4rem, 400);
+        padding: 1rem;
+        text-align: center;
+        user-select: none;
+        color: #FFFFFF;
+
+        span {
+            user-select: text;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+    }
+
+    &__wrap-btn {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hero__btn {
+            @include fontProcessing('Roboto Mono', 2rem, 400);
+            background-color: rgba(0, 3, 249, 0.5);
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            border: 0.2rem rgba(0, 3, 249, ) solid;
+
+            img {
+                padding-left: 1rem;
+                width: 5rem;
+                height: 6rem;
+                transition: all 0.5s;
+            }
+
+            &:hover {
+                img {
+                    transition: all 0.5s;
+                    transform: rotate(90deg) translate(-0.4rem);
+                }
+
+                & {
+                    background-color: rgba(0, 3, 249);
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    background-color: rgb(27, 36, 47);
+    
+    .projects__content {
+        width: 100%;
+        min-height: 30rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: hidden;
+        
+        .projects__item {
+            height: 30rem;
+            width: 55rem;
+            position: relative;
+            margin: 0 0 5rem 0;
+
+            &:hover .project__description {
+                opacity: 1;
+                transition: all 1s;
+            }
+
+            .project__img {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            .project-mobileBtn {
+                display: none;
+            }
+
+            .project__description {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                @include fontProcessing('Roboto mono', 2rem, 400);
+                opacity: 0;
+
+                .project__text-wrap {
+                    text-align: center;
+                    padding: 1rem 1rem 0 1rem;
+                    height: 24rem;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: rgb(189, 15, 15);
+                        border-radius: 5px;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 0.5rem;
+                    }
+
+                    .project__text-title {
+                        @include fontProcessing('Roboto mono', 3rem, 400);
+                        padding-bottom: 1.5rem;
+                    }
+                }
+
+                .project__btn-wrap {
+                    height: 6rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .cybr-btn_settings {
+                        min-width: 30rem;
+                        height: 5rem;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    height: 10rem;
+    width: 100%;
+    background-color: rgb(36, 46, 60);
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .footer__wrap {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .footer_icon {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .footer__back {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(251, 31, 121);
+        border-radius: 100%;
+        padding: 1rem;
+    }
+}
+
+@import './_adaptive.scss';

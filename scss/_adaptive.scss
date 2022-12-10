@@ -1,0 +1,125 @@
+@import './_scss-tools.scss';
+
+@font-face {
+    font-family: Cyber;
+    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+    font-display: swap;
+}
+
+@media (max-width: 768px) {
+    .all-titles {
+        padding: 5rem 0 2rem 0;
+        margin: 0 0 8rem 0;
+        @include fontProcessing('Roboto', 8rem, 400);
+
+        &::after {
+            width: 16rem;
+        }
+    }
+
+    .hero {
+        height: 80vh;
+
+        .hero__text {
+            @include fontProcessing('Roboto Mono', 8rem, 400);
+        }
+
+        .hero__wrap-btn {
+            .hero__btn {
+                @include fontProcessing('Roboto Mono', 4rem, 400);
+                background-color: rgba(0, 3, 249, 0.5);
+                padding: 0 2rem;
+
+                img {
+                    padding-left: 2rem;
+                    width: 10rem;
+                    height: 12rem;
+                }
+            }
+        }
+    }
+
+    .projects {
+        .projects__content {
+
+            .projects__item {
+                height: 60rem;
+                width: 100%;
+                margin: 0 0 10rem 0;
+
+                &:hover .project__description {
+                    opacity: 0;
+                }
+
+                .project-mobileBtn {
+                    position: absolute;
+                    z-index: 3;
+                    bottom: 0;
+                    right: 0;
+                    width: 29.7rem;
+                    height: 10rem;
+                    background-color: rgb(236, 19, 19);
+                    font-size: 5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    user-select: none;
+                    font-family: Cyber;
+                    cursor: pointer;
+                }
+
+                .project__description {
+                    opacity: 0;
+                    transform: translateX(150%);
+                    @include fontProcessing('Roboto mono', 4rem, 400);
+
+                    .project__text-wrap {
+                        text-align: center;
+                        padding: 2rem 2rem 0 2rem;
+                        height: 50rem;
+                        overflow-y: scroll;
+
+                        .project__text-title {
+                            @include fontProcessing('Roboto mono', 6rem, 400);
+                            padding-bottom: 3rem;
+                        }
+                    }
+
+
+                    .project__btn-wrap {
+                        height: 10rem;
+
+                        .cybr-btn_settings {
+                            min-width: 60rem;
+                            height: 10rem;
+                            font-size: 4rem;
+
+                            .cybr-btn__tag {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: 20rem;
+
+        .footer__wrap {
+            height: 100%;
+            width: 60%;
+        }
+
+        .footer_icon {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .footer__back {
+            padding: 2rem;
+            font-size: 4rem;
+        }
+    }
+}

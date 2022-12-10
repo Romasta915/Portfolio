@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Generator</title>
+    <link rel="icon" href="./img/css_icon2.png">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="container my-all-cont">
+        <div class="row margin-top">
+            <div class="col-4 mytitle" id="test">
+                CSS Generator
+            </div>
+            <div style="font-size: 15px;" class="col-8 mytitle">
+                The site is designed to create ready blocks with the settings you need. Good luck!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="code-container">
+                    <div class="code-output" id="codeOutput"></div>
+                    <button type="button" class="btn btn-dark copy-button" id="btnCopy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <divй style="user-select: none;" class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Size
+                            </button>
+                        </h2><!--                         сюди треба добавити   show   -->
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <label for="rangeWidth" class="form-label">Width</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeWidth" min="10" max="500"
+                                                value="300">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numberWidth" min="100"
+                                                max="500" value="300">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="rangeHeigth" class="form-label">Height</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeHeigth" min="10" max="500"
+                                                value="200">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numberHeigth" min="100"
+                                                max="500" value="200">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Background
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <label for="rangeR" class="form-label">Red:</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeR" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numR" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="rangeG" class="form-label">Green:</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeG" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numG" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="rangeB" class="form-label">Blue:</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeB" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numB" min="0" max="255"
+                                                value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="rangeO" class="form-label">Opacity:</label>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="range" class="form-range" id="rangeO" min="0" max="10"
+                                                value="10">
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control" type="number" id="numO" min="0" max="10"
+                                                value="10">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Text
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <label for="addText">Add text</label>
+                                    <textarea class="form-control" id="addText" cols="10" rows="1"></textarea>
+                                </div>
+                                <div class="margin-top">
+                                    <label for="fontSize">Font size</label>
+                                    <input type="number" max="200px" class="form-control" id="fontSize"
+                                        placeholder="(px)">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="textAlign">Text align</label>
+                                    <select class="form-control" id="textAlign">
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="center">Center</option>
+                                        <option value="start">Start</option>
+                                        <option value="end">End</option>
+                                    </select>
+                                </div>
+                                <div class="margin-top">
+                                    <label for="textVertical">Line height</label>
+                                    <input type="range" class="form-range" id="textVertical" min="15" max="970"
+                                        value="0">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="fontFamily" class="form-label">Font Family</label>
+                                    <select id="fontFamily" class="form-control">
+                                        <option value="arial">arial</option>
+                                        <option value="Courier">Courier</option>
+                                        <option value="Verdana">Verdana</option>
+                                        <option value="sans-serif">sans-serif</option>
+                                        <option value="monospace">monospace</option>
+                                        <option value="cursive">cursive</option>
+                                        <option value="fantasy">fantasy</option>
+                                        <option value="emoji">emoji</option>
+                                        <option value="fangsong">fangsong</option>
+                                        <option value="serif">serif</option>
+                                    </select>
+                                </div>
+                                <div class="margin-top">
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <label for="textR" class="form-label">Red:</label>
+                                            </div>
+                                            <div class="col-10">
+                                                <input type="range" class="form-range" id="textR" min="0" max="255"
+                                                    value="255">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <label for="textG" class="form-label">Green:</label>
+                                            </div>
+                                            <div class="col-10">
+                                                <input type="range" class="form-range" id="textG" min="0" max="255"
+                                                    value="255">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <label for="textB" class="form-label">Blue:</label>
+                                            </div>
+                                            <div class="col-10">
+                                                <input type="range" class="form-range" id="textB" min="0" max="255"
+                                                    value="255">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Borders
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <label>All borders</label>
+                                    <label>Size</label>
+                                    <input type="range" class="form-range allBordersInputs" id="allBordersSize" min="0"
+                                        max="200" value="1">
+                                    <label>Style</label>
+                                    <select id="allBordersStyle" class="form-control allBordersInputs">
+                                        <option value="solid">solid</option>
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                    <label class="margin-top">Color</label>
+                                    <input type="text" class="form-control allBordersInputs" id="allBordersColor"
+                                        placeholder="in words, rgb, hex...">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="borderRadius">Border radius</label>
+                                    <input type="text" class="form-control" id="borderRadius"
+                                        placeholder="border-radius: 10% 30% 50% 70%;">
+                                </div>
+                                <hr>
+                                <div>
+                                    <label for="borderTop">Top border</label>
+                                    <input type="text" class="form-control" id="borderTop"
+                                        placeholder="3px solid black">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="borderRight">Right border</label>
+                                    <input type="text" class="form-control" id="borderRight"
+                                        placeholder="666px groove crimson">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="borderBot">Bottom border</label>
+                                    <input type="text" class="form-control" id="borderBot"
+                                        placeholder="18px dashed yellow">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="borderLeft">Left border</label>
+                                    <input type="text" class="form-control" id="borderLeft"
+                                        placeholder="90px inset blue">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Shadow
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <label for="boxRadio">box</label>
+                                <input type="radio" name="ggg" id="boxRadio" checked>
+                                <label for="textRadio">text</label>
+                                <input type="radio" name="ggg" id="textRadio">
+                                <hr>
+                                <div>
+                                    <label for="shadowColor">Color</label>
+                                    <input placeholder="in words, rgb, hex..." type="text" class="form-control shadowSettings" id="shadowColor">
+                                </div>
+                                <div  class="margin-top">
+                                    <label for="displacementX">Displacement X</label>
+                                    <input type="range" class="form-range shadowSettings" id="displacementX" min="0" max="500" value="0">
+                                </div>
+                                <div>
+                                    <label for="displacementY">Displacement Y</label>
+                                    <input type="range" class="form-range shadowSettings" id="displacementY" min="0" max="500" value="0">
+                                </div>
+                                <div>
+                                    <label for="shadowBlur">Blur</label>
+                                    <input type="range" class="form-range shadowSettings" id="shadowBlur" min="0" max="500" value="0">
+                                </div>
+                                <div>
+                                    <label for="shadowStyle">Style</label>
+                                    <select id="shadowStyle" class="form-control shadowSettings">
+                                        <option value="">default</option>
+                                        <option value="inset">inset</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Transform
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <label for="tScale">Scale</label>
+                                    <input type="text" class="form-control" id="tScale" placeholder="scaleX, scaleY">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="tRotate">Rotate</label>
+                                    <input type="range" class="form-range" id="tRotate" max="360" value="0">
+                                </div>
+                                <div class="margin-top">
+                                    <label for="tTranslate">Translate</label>
+                                    <input type="text" class="form-control" id="tTranslate" placeholder="transateX, transateY">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </divй>
+            </div>
+            <div class="col-8">
+                <div class="box-container">
+                    <div class="box" id="box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

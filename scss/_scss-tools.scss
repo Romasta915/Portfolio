@@ -1,0 +1,5 @@
+@mixin fontProcessing($font-family, $font-size, $font-weight) {
+    font-family: $font-family, sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
