@@ -235,18 +235,18 @@ for (const e of projectsArr) {
 // });
 
 ScrollReveal().reveal('.left-reveal', {
-    delay: Math.random() * 500,
+    // delay: Math.random() * 500,
     distance: '150%',
     origin: 'left',
-    duration: 1500,
+    duration: 1000,
     reset: true
 });
 
 ScrollReveal().reveal('.right-reveal', {
-    delay: Math.random() * 500,
+    // delay: Math.random() * 500,
     distance: '150%',
     origin: 'right',
-    duration: 1500,
+    duration: 1000,
     reset: true
 });
 
