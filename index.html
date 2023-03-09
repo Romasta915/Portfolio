@@ -8,12 +8,14 @@
     <title>Portfolio</title>
     <link rel="icon" href="./images/icons/logo_black.png">
 
-    <link rel="stylesheet" href="./css/main.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="./plugins/alertify-js/css/alertify.min.css">
+    <link rel="stylesheet" href="./plugins/alertify-js/css/themes/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -29,7 +31,6 @@
             </ul>
         </div>
 
-        <div id="archor-hero"></div>
         <section class="hero">
             <canvas id='hero-canvas'></canvas>
             <div>
@@ -48,6 +49,7 @@
         </section>
 
         <section class="projects">
+            <div id="archor-projects"></div>
             <div class="cont">
                 <div id="archor-projects"></div>
                 <div class="all-titles projects__title">PROJECTS</div>
@@ -72,8 +74,7 @@
                                         id="radio-javascript" />
                                 </span>
                                 <div class="technical-bar">
-                                    <div class="technical-per anim-item _anim-no-repeat" per="90%"
-                                        style="max-width: 90%;">
+                                    <div class="technical-per anim-item _anim-no-repeat" per="0">
                                     </div>
                                 </div>
                             </label>
@@ -87,7 +88,7 @@
                                         id="radio-react" />
                                 </span>
                                 <div class="technical-bar">
-                                    <div class="technical-per anim-item _anim-no-repeat" per="40%"
+                                    <div class="technical-per anim-item _anim-no-repeat" per="0"
                                         style="max-width: 40%;">
                                     </div>
                                 </div>
@@ -114,7 +115,7 @@
                         <div class="button-cont">
                             <label class="radio-label" for="radio-asc">
                                 <span>
-                                    ⬆
+                                    ⬇
                                     <input class="radio-button" name="order" type="radio" value="default:asc"
                                         id="radio-asc" checked />
                                 </span>
@@ -124,7 +125,7 @@
                         <div class="button-cont">
                             <label class="radio-label" for="radio-desc">
                                 <span>
-                                    ⬇
+                                    ⬆
                                     <input class="radio-button" name="order" type="radio" value="default:desc"
                                         id="radio-desc" />
                                 </span>
@@ -137,8 +138,10 @@
         </section>
 
         <section class="footer">
-            <button class="footer__back">
-                <a href="#archor-hero">⬆⬆⬆</a>
+            <button class="footer__back" title="start projects">
+                <a href="#archor-projects">
+                    <img src="./images/icons/up_arrow_icon.png" alt="#">
+                </a>
             </button>
             <div class="footer__wrap">
                 <i id="ico1">
@@ -166,10 +169,11 @@
         </section>
     </main>
 
-    <!-- <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> -->
-    <script src="./libriaries/scrollreveal@4.0.0/scrollreveal.min.js"></script>
-    <script src="./libriaries/mixitup-3/dist/mixitup.min.js"></script>
+    <script src="./plugins/scrollreveal@4.0.0/scrollreveal.min.js"></script>
+    <script src="./plugins/mixitup-3/dist/mixitup.min.js"></script>
+    <script src="./plugins/alertify-js/alertify.min.js"></script>
     <script src='./js/script.js'></script>
+
 </body>
 
 </html>

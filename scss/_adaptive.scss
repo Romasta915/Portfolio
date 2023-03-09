@@ -18,7 +18,7 @@
     }
 
     .hero {
-        height: 80vh;
+        height: 50vh;
 
         .hero__text {
             @include fontProcessing('Roboto Mono', 8rem, 400);
@@ -64,7 +64,7 @@
         }
 
         .projects__controls {
-            display: flex;
+            display: none;
             padding-bottom: 50px;
             // new styles
             position: relative;
@@ -231,8 +231,8 @@
         }
 
         .footer__back {
-            padding: 2rem;
-            font-size: 4rem;
+            width: 60px;
+            height: 60px;
         }
     }
 }

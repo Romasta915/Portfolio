@@ -6,8 +6,7 @@
 // 4.elements reveal 
 // 5.setting of sorting, filtering (mixitup) 
 // 6.custom elements reveal (freelancer for life)
-
-
+// 7.show project controls and up button
 
 // ========== 1.bg canvas ==========
 const canvas = document.getElementById("hero-canvas");
@@ -136,7 +135,7 @@ projectsArr = [
         projectTitle: 'Site for "Foreign exchange"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/3Foreing exchange',
-        projectType: 'javascript'
+        projectType: 'react'
     },
     {
         id: 4,
@@ -152,7 +151,7 @@ projectsArr = [
         projectTitle: 'Site for "CSS Generator"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/5CSS Generator',
-        projectType: 'react'
+        projectType: 'angular'
     },
     {
         id: 6,
@@ -160,14 +159,6 @@ projectsArr = [
         projectTitle: 'Site for "Audio player"',
         projectText: 'Made with: HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript',
         aHref: './projects/6Audio player',
-        projectType: 'angular'
-    },
-    {
-        id: 7,
-        imgPath: './projects/Projects_photos/tour_guide.png',
-        projectTitle: 'Site for "Tour guide"',
-        projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/7Tour-guide',
         projectType: 'angular'
     }
 ]
@@ -303,31 +294,59 @@ window.addEventListener('scroll', () => {
     animOnScroll(technicalPerItems)
 })
 
-// ========== 7.show project controls ==========
+// ========== 7.show project controls and up button ==========
 let allProjects = document.querySelectorAll('.projects__item')
 let projectsControls = document.querySelector('.projects__controls')
+let upButton = document.querySelector('.footer__back')
+let projectsControlsVisible = false
+let oneTrigger = false
 
+function showProjectControlsAndUpButton(items) {
+    for (let i = 0; i < items.length; i++) {
+        const lastElement = items[items.length - 1];
+        let lastElementOffset = window.scrollY + lastElement.getBoundingClientRect().top
+        let lastElementHeigth = lastElement.offsetHeight
 
-window.addEventListener('scroll', () => {
-
-    for (let i = 0; i < allProjects.length; i++) {
-        const lastElement = allProjects[allProjects.length - 1];
-        let lastElementOffset = window.scrollY
-        // + lastElement.getBoundingClientRect().top
-
-        // console.log(Window.scrollY >= lastElementOffset);
-
-        console.log(lastElement.getBoundingClientRect().top);
-
-        // console.log('скролл', window.scrollY);
-        // console.log(lastElementOffset);
-
-
-        if (window.scrollY >= lastElementOffset) {
-            projectsControls.style.display = 'flex'
-        }
+        window.scrollY >= lastElementOffset - lastElementHeigth ? projectsControlsVisible = true : null;
     }
 
+    if (projectsControlsVisible && oneTrigger == false) {
+        projectsControls.style.display = 'flex'
+        alertify.set('notifier', 'position', 'top-center');
+        alertify.notify('✔ Sorting is unlocked', 'success');
+        oneTrigger = true
+
+        upButton.style.transform = 'translateY(0px)'
+    }
+}
+window.addEventListener('scroll', () => {
+    showProjectControlsAndUpButton(allProjects)
 })
 
+// ========== 8.сalculation of technology percentages ==========
+let percentItems = document.querySelectorAll('.technical-per')
+let onlyProjectsTypes = projectsArr.slice(0).map(item => item.projectType)
+
+function сalculatePercents(items) {
+
+    let jsCount = 0, reactCount = 0, angularCount = 0
+    for (let i = 0; i < items.length; i++) {
+        const typeStr = items[i];
+        if (typeStr === 'javascript') jsCount += 1;
+        if (typeStr === 'react') reactCount += 1;
+        if (typeStr === 'angular') angularCount += 1;
+    }
+
+    changeElementPercent(percentItems[0], jsCount)
+    changeElementPercent(percentItems[1], reactCount)
+    changeElementPercent(percentItems[2], angularCount)
+
+    function changeElementPercent(element, count) {
+        element.setAttribute('per', Math.floor(count / (items.length / 100)) + '%')
+        element.style.maxWidth = Math.floor(count / (items.length / 100)) + '%'
+    }
+}
+сalculatePercents(onlyProjectsTypes)
+
+// 
 
