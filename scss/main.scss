@@ -1,6 +1,6 @@
-@import "./_normalization.scss";
-@import "./_elements.scss";
-@import "./_scss-tools.scss";
+@import "./normalization";
+@import "./elements";
+@import "./variables";
 
 // !!! repetitive styles
 .cont {
@@ -13,8 +13,6 @@
     @include fontProcessing('Roboto', 4rem, 400);
     letter-spacing: 1px;
     position: relative;
-    padding: 2.5rem 0 1rem 0;
-    margin: 0 0 5rem 0;
 
     &::after {
         content: '';
@@ -120,7 +118,7 @@ body::-webkit-scrollbar {
                 }
 
                 & {
-                    background-color: rgba(0, 3, 249);
+                    background-color: $mainColor;
                 }
             }
         }
@@ -129,7 +127,163 @@ body::-webkit-scrollbar {
 
 .projects {
     background-color: rgb(27, 36, 47);
-    
+
+    .projects__title {
+        padding: 2.5rem 0 1rem 0;
+        margin: 0 0 4rem 0;
+    }
+
+    .radio-button {
+        -webkit-appearance: none;
+        appearance: none;
+
+        position: absolute;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: 1.3rem;
+        right: -2.5rem;
+
+        border-radius: 100%;
+        transition: 0.3s;
+        border: 0.3rem solid rgb(27, 36, 47);
+        background-color: rgb(27, 36, 47);
+        outline: 0.2rem solid white;
+    }
+
+    .radio-button:checked {
+        border: 0.4rem solid $mainColor;
+        background-color: white;
+    }
+
+    .projects__controls {
+        position: relative;
+        display: none;
+        padding-bottom: 50px;
+        color: $mainColor;
+        text-shadow: 0 0 2rem rgba(255, 255, 255, 0.5);
+
+        .radios-filter {
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+
+            .button-cont {
+                width: 20%;
+                margin: 0 1rem;
+                text-align: center;
+                height: 5.5rem;
+                position: relative;
+
+                .radio-label {
+                    @include fontProcessing('Roboto', 3rem, 400);
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    z-index: 3;
+                    cursor: pointer;
+
+                    span {
+                        position: relative;
+                    }
+                }
+
+                .technical-bar {
+                    outline: 0.2rem solid white;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1.4rem;
+                    background-color: #202020;
+                    border-radius: 0.3rem;
+
+                    .technical-per {
+                        width: 100%;
+                        height: 1.4rem;
+                        background-color: $mainColor;
+                        border-radius: 0.3rem;
+                        position: relative;
+                    }
+
+                    .technical-per._active {
+                        animation: fillBars 2s 1;
+                    }
+
+                    .technical-per::before {
+                        content: attr(per);
+                        position: absolute;
+                        padding: 0.4rem 0.6rem;
+                        background-color: white;
+                        border-radius: 0.4rem;
+                        color: $mainColor;
+                        @include fontProcessing('Roboto mono', 1rem, 400);
+                        bottom: -2.8rem;
+                        right: 0;
+                        transform: translateX(50%);
+                    }
+
+                    @keyframes fillBars {
+                        from {
+                            width: 0;
+                        }
+
+                        to {
+                            width: 100%;
+                        }
+                    }
+
+                    .technical-per::after {
+                        content: "";
+                        position: absolute;
+                        width: 0.7rem;
+                        height: 0.7rem;
+                        background-color: white;
+                        bottom: -1.3rem;
+                        right: 0;
+                        transform: translateX(50%) rotate(45deg);
+                        border-radius: 0.1rem;
+                    }
+                }
+
+            }
+
+            .button-cont:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+                transition: 1s;
+                border-radius: 0.3rem;
+            }
+        }
+
+        .radios-sort {
+            width: 10%;
+
+            .button-cont {
+
+                .radio-label {
+                    @include fontProcessing('Roboto', 3rem, 400);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 3;
+                    cursor: pointer;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    span {
+                        position: relative;
+                        margin-top: 2px;
+                    }
+                }
+            }
+
+            .button-cont:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+                transition: 1s;
+                border-radius: 0.3rem;
+            }
+        }
+    }
+
     .projects__content {
         width: 100%;
         min-height: 30rem;
@@ -137,7 +291,7 @@ body::-webkit-scrollbar {
         flex-wrap: wrap;
         justify-content: space-around;
         overflow: hidden;
-        
+
         .projects__item {
             height: 30rem;
             width: 55rem;
@@ -146,7 +300,7 @@ body::-webkit-scrollbar {
 
             &:hover .project__description {
                 opacity: 1;
-                transition: all 1s;
+                transition: all 0.3s;
             }
 
             .project__img {
@@ -242,4 +396,4 @@ body::-webkit-scrollbar {
     }
 }
 
-@import './_adaptive.scss';
+@import './adaptive';

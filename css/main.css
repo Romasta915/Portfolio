@@ -86,8 +86,7 @@ p {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 button {
@@ -165,8 +164,7 @@ ul li {
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-clip-path: var(--clip);
-          clip-path: var(--clip);
+  clip-path: var(--clip);
   z-index: -1;
 }
 
@@ -199,10 +197,8 @@ ul li {
   bottom: calc(var(--border) * -1);
   background: var(--shadow-primary);
   text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
-  -webkit-clip-path: var(--clip);
-          clip-path: var(--clip);
-  -webkit-animation: glitch 2s infinite;
-          animation: glitch 2s infinite;
+  clip-path: var(--clip);
+  animation: glitch 2s infinite;
   display: none;
 }
 
@@ -217,161 +213,69 @@ ul li {
   right: calc(var(--border) * 1);
   bottom: calc(var(--border) * 1);
   left: calc(var(--border) * 1);
-  -webkit-clip-path: var(--clip);
-          clip-path: var(--clip);
+  clip-path: var(--clip);
   background: var(--primary);
   z-index: -1;
 }
 
-@-webkit-keyframes glitch {
-  0% {
-    -webkit-clip-path: var(--clip-one);
-            clip-path: var(--clip-one);
-  }
-  2%, 8% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
-    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
-  }
-  6% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  9% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
-    transform: translate(0, 0);
-  }
-  10% {
-    -webkit-clip-path: var(--clip-three);
-            clip-path: var(--clip-three);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  13% {
-    -webkit-clip-path: var(--clip-three);
-            clip-path: var(--clip-three);
-    transform: translate(0, 0);
-  }
-  14%, 21% {
-    -webkit-clip-path: var(--clip-four);
-            clip-path: var(--clip-four);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  25% {
-    -webkit-clip-path: var(--clip-five);
-            clip-path: var(--clip-five);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  30% {
-    -webkit-clip-path: var(--clip-five);
-            clip-path: var(--clip-five);
-    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
-  }
-  35%, 45% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
-    transform: translate(calc(var(--shimmy-distance) * -1%));
-  }
-  40% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
-    transform: translate(calc(var(--shimmy-distance) * 1%));
-  }
-  50% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
-    transform: translate(0, 0);
-  }
-  55% {
-    -webkit-clip-path: var(--clip-seven);
-            clip-path: var(--clip-seven);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  60% {
-    -webkit-clip-path: var(--clip-seven);
-            clip-path: var(--clip-seven);
-    transform: translate(0, 0);
-  }
-  31%, 61%, 100% {
-    -webkit-clip-path: var(--clip-four);
-            clip-path: var(--clip-four);
-  }
-}
-
 @keyframes glitch {
   0% {
-    -webkit-clip-path: var(--clip-one);
-            clip-path: var(--clip-one);
+    clip-path: var(--clip-one);
   }
   2%, 8% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
+    clip-path: var(--clip-two);
     transform: translate(calc(var(--shimmy-distance) * -1%), 0);
   }
   6% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
+    clip-path: var(--clip-two);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   9% {
-    -webkit-clip-path: var(--clip-two);
-            clip-path: var(--clip-two);
+    clip-path: var(--clip-two);
     transform: translate(0, 0);
   }
   10% {
-    -webkit-clip-path: var(--clip-three);
-            clip-path: var(--clip-three);
+    clip-path: var(--clip-three);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   13% {
-    -webkit-clip-path: var(--clip-three);
-            clip-path: var(--clip-three);
+    clip-path: var(--clip-three);
     transform: translate(0, 0);
   }
   14%, 21% {
-    -webkit-clip-path: var(--clip-four);
-            clip-path: var(--clip-four);
+    clip-path: var(--clip-four);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   25% {
-    -webkit-clip-path: var(--clip-five);
-            clip-path: var(--clip-five);
+    clip-path: var(--clip-five);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   30% {
-    -webkit-clip-path: var(--clip-five);
-            clip-path: var(--clip-five);
+    clip-path: var(--clip-five);
     transform: translate(calc(var(--shimmy-distance) * -1%), 0);
   }
   35%, 45% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
+    clip-path: var(--clip-six);
     transform: translate(calc(var(--shimmy-distance) * -1%));
   }
   40% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
+    clip-path: var(--clip-six);
     transform: translate(calc(var(--shimmy-distance) * 1%));
   }
   50% {
-    -webkit-clip-path: var(--clip-six);
-            clip-path: var(--clip-six);
+    clip-path: var(--clip-six);
     transform: translate(0, 0);
   }
   55% {
-    -webkit-clip-path: var(--clip-seven);
-            clip-path: var(--clip-seven);
+    clip-path: var(--clip-seven);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   60% {
-    -webkit-clip-path: var(--clip-seven);
-            clip-path: var(--clip-seven);
+    clip-path: var(--clip-seven);
     transform: translate(0, 0);
   }
   31%, 61%, 100% {
-    -webkit-clip-path: var(--clip-four);
-            clip-path: var(--clip-four);
+    clip-path: var(--clip-four);
   }
 }
 .cybr-btn:nth-of-type(2) {
@@ -415,8 +319,7 @@ ul li {
   border-radius: 200px;
   text-shadow: 2px 2px 0px rgb(0, 0, 0);
   box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.5);
-  -webkit-animation: pulseShadow 5s infinite linear;
-          animation: pulseShadow 5s infinite linear;
+  animation: pulseShadow 5s infinite linear;
 }
 
 .page-loader li:last-child:after {
@@ -440,8 +343,7 @@ ul li {
   width: 240px;
   height: 240px;
   border-width: 10px;
-  -webkit-animation: spinBG 5s infinite linear;
-          animation: spinBG 5s infinite linear;
+  animation: spinBG 5s infinite linear;
 }
 
 .page-loader li:nth-child(2) {
@@ -453,8 +355,7 @@ ul li {
   border-width: 2px;
   border-style: dotted;
   box-shadow: 0px 0px 20px rgba(23, 246, 251, 0.5);
-  -webkit-animation: spinBG2 2s infinite linear;
-          animation: spinBG2 2s infinite linear;
+  animation: spinBG2 2s infinite linear;
 }
 
 .page-loader li:nth-child(3) {
@@ -465,8 +366,7 @@ ul li {
   height: 296px;
   border-width: 2px;
   box-shadow: inset 0px 0px 25px rgba(23, 246, 251, 0.25);
-  -webkit-animation: spinBG 12s infinite linear;
-          animation: spinBG 12s infinite linear;
+  animation: spinBG 12s infinite linear;
 }
 
 .page-loader li:nth-child(4) {
@@ -478,20 +378,7 @@ ul li {
   border-width: 5px;
   border-style: solid;
   box-shadow: inset 0px 0px 25px rgb(23, 246, 251);
-  -webkit-animation: spinBG3 8s infinite linear;
-          animation: spinBG3 8s infinite linear;
-}
-
-@-webkit-keyframes pulseGlow {
-  0% {
-    text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
-  }
-  50% {
-    text-shadow: 0px 0px 40px rgba(23, 246, 251, 0.5);
-  }
-  100% {
-    text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
-  }
+  animation: spinBG3 8s infinite linear;
 }
 
 @keyframes pulseGlow {
@@ -505,17 +392,6 @@ ul li {
     text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
   }
 }
-@-webkit-keyframes pulseShadow {
-  0% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
-  }
-  50% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.75);
-  }
-  100% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
-  }
-}
 @keyframes pulseShadow {
   0% {
     box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
@@ -527,34 +403,12 @@ ul li {
     box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
   }
 }
-@-webkit-keyframes spinBG {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes spinBG {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spinBG2 {
-  0% {
-    transform: rotate(360deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
-  }
-  50% {
-    transform: rotate(180deg);
-    box-shadow: 0px 0px 20px rgba(23, 246, 251, 0.5);
-  }
-  100% {
-    transform: rotate(0deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
   }
 }
 @keyframes spinBG2 {
@@ -569,18 +423,6 @@ ul li {
   100% {
     transform: rotate(0deg);
     box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
-  }
-}
-@-webkit-keyframes spinBG3 {
-  0% {
-    transform: rotate(180deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.1);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-180deg);
   }
 }
 @keyframes spinBG3 {
@@ -612,39 +454,25 @@ ul li {
       inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
       inset 2px 2px 10px #00000080; */
   border-radius: 100%;
-  -webkit-animation: animate 3s linear infinite;
-          animation: animate 3s linear infinite;
+  animation: animate 3s linear infinite;
   /* text-shadow: 0 0 500px #0072ff, 0 0 1000px #0072ff, 0 0 1500px #0072ff,
       0 0 2000px #0072ff; */
 }
 
 #ico1 {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 #ico2 {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 #ico3 {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 #ico4 {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-
-@-webkit-keyframes animate {
-  from {
-    filter: hue-rotate(0deg);
-  }
-  to {
-    filter: hue-rotate(360deg);
-  }
+  animation-delay: 1.5s;
 }
 
 @keyframes animate {
@@ -667,8 +495,6 @@ ul li {
   font-weight: 400;
   letter-spacing: 1px;
   position: relative;
-  padding: 2.5rem 0 1rem 0;
-  margin: 0 0 5rem 0;
 }
 .all-titles::after {
   content: "";
@@ -737,17 +563,11 @@ body::-webkit-scrollbar {
   font-weight: 400;
   padding: 1rem;
   text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   color: #FFFFFF;
 }
 .hero__text span {
-  -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
+  user-select: text;
   font-weight: 900;
   letter-spacing: 3px;
 }
@@ -784,6 +604,142 @@ body::-webkit-scrollbar {
 .projects {
   background-color: rgb(27, 36, 47);
 }
+.projects .projects__title {
+  padding: 2.5rem 0 1rem 0;
+  margin: 0 0 4rem 0;
+}
+.projects .radio-button {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  width: 1.3rem;
+  height: 1.3rem;
+  top: 1.3rem;
+  right: -2.5rem;
+  border-radius: 100%;
+  transition: 0.3s;
+  border: 0.3rem solid rgb(27, 36, 47);
+  background-color: rgb(27, 36, 47);
+  outline: 0.2rem solid white;
+}
+.projects .radio-button:checked {
+  border: 0.4rem solid rgb(0, 3, 249);
+  background-color: white;
+}
+.projects .projects__controls {
+  position: relative;
+  display: none;
+  padding-bottom: 50px;
+  color: rgb(0, 3, 249);
+  text-shadow: 0 0 2rem rgba(255, 255, 255, 0.5);
+}
+.projects .projects__controls .radios-filter {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.projects .projects__controls .radios-filter .button-cont {
+  width: 20%;
+  margin: 0 1rem;
+  text-align: center;
+  height: 5.5rem;
+  position: relative;
+}
+.projects .projects__controls .radios-filter .button-cont .radio-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 3;
+  cursor: pointer;
+}
+.projects .projects__controls .radios-filter .button-cont .radio-label span {
+  position: relative;
+}
+.projects .projects__controls .radios-filter .button-cont .technical-bar {
+  outline: 0.2rem solid white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1.4rem;
+  background-color: #202020;
+  border-radius: 0.3rem;
+}
+.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per {
+  width: 100%;
+  height: 1.4rem;
+  background-color: rgb(0, 3, 249);
+  border-radius: 0.3rem;
+  position: relative;
+}
+.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per._active {
+  animation: fillBars 2s 1;
+}
+.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per::before {
+  content: attr(per);
+  position: absolute;
+  padding: 0.4rem 0.6rem;
+  background-color: white;
+  border-radius: 0.4rem;
+  color: rgb(0, 3, 249);
+  font-family: "Roboto mono", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  bottom: -2.8rem;
+  right: 0;
+  transform: translateX(50%);
+}
+@keyframes fillBars {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per::after {
+  content: "";
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: white;
+  bottom: -1.3rem;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 0.1rem;
+}
+.projects .projects__controls .radios-filter .button-cont:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 1s;
+  border-radius: 0.3rem;
+}
+.projects .projects__controls .radios-sort {
+  width: 10%;
+}
+.projects .projects__controls .radios-sort .button-cont .radio-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects .projects__controls .radios-sort .button-cont .radio-label span {
+  position: relative;
+  margin-top: 2px;
+}
+.projects .projects__controls .radios-sort .button-cont:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 1s;
+  border-radius: 0.3rem;
+}
 .projects .projects__content {
   width: 100%;
   min-height: 30rem;
@@ -800,15 +756,14 @@ body::-webkit-scrollbar {
 }
 .projects .projects__content .projects__item:hover .project__description {
   opacity: 1;
-  transition: all 1s;
+  transition: all 0.3s;
 }
 .projects .projects__content .projects__item .project__img {
   width: 100%;
   height: 100%;
 }
 .projects .projects__content .projects__item .project__img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .projects .projects__content .projects__item .project-mobileBtn {
   display: none;
@@ -921,6 +876,105 @@ body::-webkit-scrollbar {
     width: 10rem;
     height: 12rem;
   }
+  .projects .radio-button {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    width: 2.6rem;
+    height: 2.6rem;
+    top: 2.6rem;
+    right: -5rem;
+    border-radius: 100%;
+    transition: 0.3s;
+    border: 0.6rem solid rgb(27, 36, 47);
+    background-color: rgb(27, 36, 47);
+    outline: 0.4rem solid white;
+  }
+  .projects .radio-button:checked {
+    border: 0.8rem solid rgb(0, 3, 249);
+    background-color: white;
+  }
+  .projects .projects__controls {
+    display: flex;
+    padding-bottom: 50px;
+    position: relative;
+  }
+  .projects .projects__controls .radios-filter {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .projects .projects__controls .radios-filter .button-cont {
+    width: 100%;
+    margin: 4rem 1rem;
+    height: 10.5rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0.5rem;
+  }
+  .projects .projects__controls .radios-filter .button-cont .radio-label {
+    font-family: "Roboto", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+  }
+  .projects .projects__controls .radios-filter .button-cont .technical-bar {
+    position: absolute;
+    bottom: 0;
+    height: 2.8rem;
+  }
+  .projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per {
+    width: 100%;
+    height: 2.8rem;
+    border-radius: 0.6rem;
+  }
+  .projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per::before {
+    content: attr(per);
+    position: absolute;
+    padding: 0.8rem 1.2rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    color: rgb(0, 3, 249);
+    font-family: "Roboto mono", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    bottom: -5.6rem;
+    right: 0;
+    transform: translateX(50%);
+  }
+  .projects .projects__controls .radios-filter .button-cont:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 1s;
+    border-radius: 0.3rem;
+  }
+  .projects .projects__controls .radios-sort {
+    width: 10rem;
+    position: absolute;
+    top: 5rem;
+    right: 20rem;
+    z-index: 4;
+    display: flex;
+  }
+  .projects .projects__controls .radios-sort .button-cont {
+    display: flex;
+    width: 30rem;
+    margin-left: 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.6rem;
+  }
+  .projects .projects__controls .radios-sort .button-cont .radio-label {
+    font-family: "Roboto", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    z-index: 3;
+    position: relative;
+    display: block;
+    width: 12rem;
+    height: 9rem;
+    padding: 1rem;
+  }
+  .projects .projects__controls .radios-sort .button-cont .radio-label span {
+    margin-top: 0px;
+  }
   .projects .projects__content .projects__item {
     height: 60rem;
     width: 100%;
@@ -941,10 +995,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    user-select: none;
     font-family: Cyber;
     cursor: pointer;
   }
@@ -993,4 +1044,4 @@ body::-webkit-scrollbar {
     padding: 2rem;
     font-size: 4rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}

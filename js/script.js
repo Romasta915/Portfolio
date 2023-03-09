@@ -1,14 +1,24 @@
-// !!! bg canvas
+// main js file:
+// ========== scripts ==========
+// 1.bg canvas 
+// 2.loader
+// 3.render projects 
+// 4.elements reveal 
+// 5.setting of sorting, filtering (mixitup) 
+// 6.custom elements reveal (freelancer for life)
+
+
+
+// ========== 1.bg canvas ==========
 const canvas = document.getElementById("hero-canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-// gradient.addColorStop(0.4, "yellow");
-// gradient.addColorStop(0.6, "cyan");
-// gradient.addColorStop(0.8, "blue");
-gradient.addColorStop(1, "rgb(0, 3, 249)");
+// ще потрібно змінити колір потрібно ще в функції ресайз змінити значення
+gradient.addColorStop(0.5, "rgb(0, 3, 249)");
+gradient.addColorStop(0.5, "yellow");
 
 class Symbol {
     constructor(x, y, fontSize, canvasHeight) {
@@ -89,74 +99,76 @@ window.addEventListener("resize", function () {
     canvas.height = window.innerHeight;
     effect.resize(canvas.width, canvas.height);
     gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    //   gradient.addColorStop(0.4, "yellow");
-    //   gradient.addColorStop(0.6, "cyan");
-    //   gradient.addColorStop(0.8, "blue");
-    // gradient.addColorStop(1, "yellow");
-    gradient.addColorStop(1, "rgb(0, 3, 249)");
+    gradient.addColorStop(0.5, "rgb(0, 3, 249)");
+    gradient.addColorStop(0.5, "yellow");
 });
 
-// !!! loader
-
+// ========== 2.loader ==========
 let Loader = document.querySelector('.page-loader')
 
 window.onload = () => {
     setTimeout(() => {
         Loader.style.display = 'none'
-    }, 500);
+    }, 300);
 }
 
-// !!! render projects
-
+// ========== 3.render projects ==========
 projectsArr = [
     {
         id: 1,
         imgPath: './projects/Projects_photos/restoran.jpg',
         projectTitle: 'Site for "Best home food"',
         projectText: 'Made with: HTML, CSS, JavaScript Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae! ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae!',
-        aHref: './projects/1restoran (best home food)'
+        aHref: './projects/1restoran (best home food)',
+        projectType: 'javascript'
     },
     {
         id: 2,
         imgPath: './projects/Projects_photos/landx.jpg',
         projectTitle: 'Site for "LandX"',
         projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/2LandX'
+        aHref: './projects/2LandX',
+        projectType: 'javascript'
     },
     {
         id: 3,
         imgPath: './projects/Projects_photos/foreign_exchange.png',
         projectTitle: 'Site for "Foreign exchange"',
         projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/3Foreing exchange'
+        aHref: './projects/3Foreing exchange',
+        projectType: 'javascript'
     },
     {
         id: 4,
         imgPath: './projects/Projects_photos/moviepedia.png',
         projectTitle: 'Site for "Moviepedia"',
         projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/4MoviePedia'
+        aHref: './projects/4MoviePedia',
+        projectType: 'react'
     },
     {
         id: 5,
         imgPath: './projects/Projects_photos/css_generator.png',
         projectTitle: 'Site for "CSS Generator"',
         projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/5CSS Generator'
+        aHref: './projects/5CSS Generator',
+        projectType: 'react'
     },
     {
         id: 6,
         imgPath: './projects/Projects_photos/audio_player.jpg',
         projectTitle: 'Site for "Audio player"',
         projectText: 'Made with: HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript',
-        aHref: './projects/6Audio player'
+        aHref: './projects/6Audio player',
+        projectType: 'angular'
     },
     {
         id: 7,
         imgPath: './projects/Projects_photos/tour_guide.png',
         projectTitle: 'Site for "Tour guide"',
         projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/7Tour-guide'
+        aHref: './projects/7Tour-guide',
+        projectType: 'angular'
     }
 ]
 
@@ -165,7 +177,7 @@ let projects__content = document.querySelector('.projects__content')
 for (const e of projectsArr) {
 
     projects__content.innerHTML += `
-    <div class="projects__item projects__item${e.id} random-reveal">
+    <div class="projects__item projects__item${e.id} mix ${e.projectType}">
         <div class="project-mobileBtn project-mobileBtn${e.id}">
             ◀show info
         </div>
@@ -198,7 +210,7 @@ for (const e of projectsArr) {
     let btnActive = false
     des.style.transition = 'all 1s'
     btn.style.transition = 'all 1s'
-    
+
     btn.addEventListener('click', () => {
         if (btnActive == false) {
             des.style.transform = 'translateX(0%)'
@@ -224,31 +236,98 @@ for (const e of projectsArr) {
     (e.id % 2 == 0) ? item.classList.add('right-reveal') : item.classList.add('left-reveal');
 }
 
-// !!! elements reveal
-// let sides = ['top', 'right', 'bottom', 'left']
-// ScrollReveal().reveal('.random-reveal', {
-//     delay: Math.random() * 500,
-//     distance: '150%',
-//     origin: `${sides[Math.floor(Math.random() * 4)]}`,
-//     duration: 1000,
-//     reset: true
-// });
-
+// ========== 4.elements reveal ==========
 ScrollReveal().reveal('.left-reveal', {
-    // delay: Math.random() * 500,
     distance: '150%',
     origin: 'left',
     duration: 1000,
-    reset: true
+    // reset: true
 });
 
 ScrollReveal().reveal('.right-reveal', {
-    // delay: Math.random() * 500,
     distance: '150%',
     origin: 'right',
-    duration: 1000,
-    reset: true
+    duration: 1300,
 });
 
+// ========== 5.setting of sorting, filtering (mixitup) ==========
+let containerEl = document.querySelector('.projects__content');
+let radiosFilter = document.querySelector('.radios-filter');
+let radiosSort = document.querySelector('.radios-sort');
+
+let mixer = mixitup(containerEl);
+
+radiosFilter.addEventListener('change', function () {
+    let checked = radiosFilter.querySelector(':checked');
+    let selector = checked ? checked.value : 'all';
+    mixer.filter(selector);
+});
+
+radiosSort.addEventListener('change', function () {
+    let checked = radiosSort.querySelector(':checked');
+    let order = checked.value;
+    mixer.sort(order);
+});
+
+// ========== 6.custom elements reveal (freelancer for life) ==========
+const technicalPerItems = document.querySelectorAll('.anim-item')
+
+if (technicalPerItems.length > 0) {
+    function animOnScroll(items) {
+        for (let i = 0; i < items.length; i++) {
+            const animItem = items[i]
+            const animItemHeight = animItem.offsetHeight // висота елемента
+            const animItemOffset = window.scrollY + animItem.getBoundingClientRect().top // координати елемента відностно початку сторінки
+            const animStart = 4 // коефіцієнт звідки стартує анімація (в даному випадку одна четверта)
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart
+
+            // на випадок якщо анімований елемент більший за вікно браузера
+            if (animItemHeight > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart
+            }
+
+            if ((window.scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+                animItem.classList.add('_active')
+            } else {
+                // якщо елемент має клас _no-repeat то анімація не повторюється
+                if (!animItem.classList.contains('_anim-no-repeat')) {
+                    animItem.classList.remove('_active')
+                }
+            }
+
+        }
+    }
+}
+window.addEventListener('scroll', () => {
+    animOnScroll(technicalPerItems)
+})
+
+// ========== 7.show project controls ==========
+let allProjects = document.querySelectorAll('.projects__item')
+let projectsControls = document.querySelector('.projects__controls')
+
+
+window.addEventListener('scroll', () => {
+
+    for (let i = 0; i < allProjects.length; i++) {
+        const lastElement = allProjects[allProjects.length - 1];
+        let lastElementOffset = window.scrollY
+        // + lastElement.getBoundingClientRect().top
+
+        // console.log(Window.scrollY >= lastElementOffset);
+
+        console.log(lastElement.getBoundingClientRect().top);
+
+        // console.log('скролл', window.scrollY);
+        // console.log(lastElementOffset);
+
+
+        if (window.scrollY >= lastElementOffset) {
+            projectsControls.style.display = 'flex'
+        }
+    }
+
+})
 
 

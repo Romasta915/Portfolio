@@ -9,7 +9,6 @@
     <link rel="icon" href="./images/icons/logo_black.png">
 
     <link rel="stylesheet" href="./css/main.css">
-    <!-- <link rel="stylesheet" href="./css/elements.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +51,87 @@
             <div class="cont">
                 <div id="archor-projects"></div>
                 <div class="all-titles projects__title">PROJECTS</div>
+                <div class="projects__controls">
+
+                    <div class="radio-group radios-filter">
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-all">
+                                <span>
+                                    All
+                                    <input class="radio-button" name="type" type="radio" value="all" id="radio-all"
+                                        checked />
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-javascript">
+                                <span>
+                                    Javascript
+                                    <input class="radio-button" name="type" type="radio" value=".javascript"
+                                        id="radio-javascript" />
+                                </span>
+                                <div class="technical-bar">
+                                    <div class="technical-per anim-item _anim-no-repeat" per="90%"
+                                        style="max-width: 90%;">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-react">
+                                <span>
+                                    React
+                                    <input class="radio-button" name="type" type="radio" value=".react"
+                                        id="radio-react" />
+                                </span>
+                                <div class="technical-bar">
+                                    <div class="technical-per anim-item _anim-no-repeat" per="40%"
+                                        style="max-width: 40%;">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-angular">
+                                <span>
+                                    Angular
+                                    <input class="radio-button" name="type" type="radio" value=".angular"
+                                        id="radio-angular" />
+                                </span>
+                                <div class="technical-bar">
+                                    <div class="technical-per anim-item _anim-no-repeat" per="50%"
+                                        style="max-width: 50%;">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="radio-group radios-sort">
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-asc">
+                                <span>
+                                    ⬆
+                                    <input class="radio-button" name="order" type="radio" value="default:asc"
+                                        id="radio-asc" checked />
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="button-cont">
+                            <label class="radio-label" for="radio-desc">
+                                <span>
+                                    ⬇
+                                    <input class="radio-button" name="order" type="radio" value="default:desc"
+                                        id="radio-desc" />
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="projects__content"></div>
             </div>
         </section>
@@ -68,24 +148,27 @@
                 </i>
                 <i id="ico2">
                     <a href="#">
-                        <img class="footer_icon" src="./images/icons/instagram.png">
+                        <img class="footer_icon" src="./images/icons/linkedin.png">
+
                     </a>
                 </i>
                 <i id="ico3">
                     <a href="#">
-                        <img class="footer_icon" src="./images/icons/facebook.png">
+                        <img class="footer_icon" src="./images/icons/telegram.png">
                     </a>
                 </i>
                 <i id="ico4">
                     <a href="#">
-                        <img class="footer_icon" src="./images/icons/twiter.png">
+                        <img class="footer_icon" src="./images/icons/instagram.png">
                     </a>
                 </i>
             </div>
         </section>
     </main>
 
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> -->
+    <script src="./libriaries/scrollreveal@4.0.0/scrollreveal.min.js"></script>
+    <script src="./libriaries/mixitup-3/dist/mixitup.min.js"></script>
     <script src='./js/script.js'></script>
 </body>
 

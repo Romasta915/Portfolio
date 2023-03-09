@@ -1,4 +1,4 @@
-@import './_scss-tools.scss';
+@import "./variables";
 
 @font-face {
     font-family: Cyber;
@@ -40,8 +40,121 @@
     }
 
     .projects {
-        .projects__content {
 
+        .radio-button {
+            -webkit-appearance: none;
+            appearance: none;
+    
+            position: absolute;
+            width: 2.6rem;
+            height: 2.6rem;
+            top: 2.6rem;
+            right: -5rem;
+    
+            border-radius: 100%;
+            transition: 0.3s;
+            border: 0.6rem solid rgb(27, 36, 47);
+            background-color: rgb(27, 36, 47);
+            outline: 0.4rem solid white;
+        }
+    
+        .radio-button:checked {
+            border: 0.8rem solid $mainColor;
+            background-color: white;
+        }
+
+        .projects__controls {
+            display: flex;
+            padding-bottom: 50px;
+            // new styles
+            position: relative;
+
+            .radios-filter {
+                display: flex;
+                width: 100%;
+                // new styles
+                flex-direction: column;
+
+                .button-cont {
+                    width: 100%;
+                    margin: 4rem 1rem;
+                    height: 10.5rem;
+                    position: relative;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    border-radius: 0.5rem;
+
+                    .radio-label {
+                        @include fontProcessing('Roboto', 6rem, 400);
+                    }
+
+                    .technical-bar {
+                        position: absolute;
+                        bottom: 0;
+                        height: 2.8rem;
+
+                        .technical-per {
+                            width: 100%;
+                            height: 2.8rem;
+                            border-radius: 0.6rem;
+                        }
+
+                        .technical-per::before {
+                            content: attr(per);
+                            position: absolute;
+                            padding: 0.8rem 1.2rem;
+                            background-color: white;
+                            border-radius: 0.8rem;
+                            color: $mainColor;
+                            @include fontProcessing('Roboto mono', 2.5rem, 400);
+                            bottom: -5.6rem;
+                            right: 0;
+                            transform: translateX(50%);
+                        }
+                    }
+                }
+
+                .button-cont:hover {
+                    background-color: rgba(255, 255, 255, 0.4);
+                    transition: 1s;
+                    border-radius: 0.3rem;
+                }
+            }
+
+            .radios-sort {
+                width: 10rem;
+                position: absolute;
+                top: 5rem;
+                right: 20rem;
+                z-index: 4;
+                display: flex;
+
+                .button-cont {
+                    display: flex;
+                    width: 30rem;
+                    margin-left: 3rem;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 0.6rem;
+
+                    .radio-label {
+                        @include fontProcessing('Roboto', 6rem, 400);
+                        z-index: 3;
+                        position: relative;
+                        display: block;
+                        width: 12rem;
+                        height: 9rem;
+                        padding: 1rem;
+
+                        span { 
+                            margin-top: 0px;
+                        }
+                    }
+                }
+
+            
+            }
+        }
+
+        .projects__content {
             .projects__item {
                 height: 60rem;
                 width: 100%;
