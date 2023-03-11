@@ -367,42 +367,31 @@
 
 /* !!! rainbow icons */
 
-#ico1,
-#ico2,
-#ico3,
-#ico4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-
+.footer__socials {
+  font-size: 4rem;
   background-color: #18191f;
   color: #fff;
-  /* box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
-      2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
-      inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
-      inset 2px 2px 10px #00000080; */
-  border-radius: 100%;
+  box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+    2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080;
+  border-radius: 15px;
+  padding: 10px 15px;
   animation: animate 3s linear infinite;
-  /* text-shadow: 0 0 500px #0072ff, 0 0 1000px #0072ff, 0 0 1500px #0072ff,
-      0 0 2000px #0072ff; */
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
 }
 
-#ico1 {
+.icon1 {
   animation-delay: 0.3s;
 }
 
-#ico2 {
+.icon2 {
   animation-delay: 0.7s;
 }
 
-#ico3 {
+.icon3 {
   animation-delay: 0.1s;
-}
-
-#ico4 {
-  animation-delay: 1.5s;
 }
 
 @keyframes animate {

@@ -7,6 +7,7 @@
 // 5.setting of sorting, filtering (mixitup) 
 // 6.custom elements reveal (freelancer for life)
 // 7.show project controls and up button
+// 8.сalculation of technology percentages
 
 // ========== 1.bg canvas ==========
 const canvas = document.getElementById("hero-canvas");
@@ -119,7 +120,8 @@ projectsArr = [
         projectTitle: 'Site for "Best home food"',
         projectText: 'Made with: HTML, CSS, JavaScript Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae! ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae!',
         aHref: './projects/1restoran (best home food)',
-        projectType: 'javascript'
+        projectType: 'javascript',
+        hasAdaptive: true
     },
     {
         id: 2,
@@ -127,7 +129,8 @@ projectsArr = [
         projectTitle: 'Site for "LandX"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/2LandX',
-        projectType: 'javascript'
+        projectType: 'javascript',
+        hasAdaptive: false
     },
     {
         id: 3,
@@ -135,7 +138,8 @@ projectsArr = [
         projectTitle: 'Site for "Foreign exchange"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/3Foreing exchange',
-        projectType: 'react'
+        projectType: 'react',
+        hasAdaptive: true
     },
     {
         id: 4,
@@ -143,7 +147,8 @@ projectsArr = [
         projectTitle: 'Site for "Moviepedia"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/4MoviePedia',
-        projectType: 'react'
+        projectType: 'react',
+        hasAdaptive: true
     },
     {
         id: 5,
@@ -151,7 +156,8 @@ projectsArr = [
         projectTitle: 'Site for "CSS Generator"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/5CSS Generator',
-        projectType: 'angular'
+        projectType: 'angular',
+        hasAdaptive: true
     },
     {
         id: 6,
@@ -159,13 +165,38 @@ projectsArr = [
         projectTitle: 'Site for "Audio player"',
         projectText: 'Made with: HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript',
         aHref: './projects/6Audio player',
-        projectType: 'angular'
+        projectType: 'angular',
+        hasAdaptive: true
+    },
+    {
+        id: 7,
+        imgPath: './projects/Projects_photos/lazy-dog.jpg',
+        projectTitle: 'Site for "LazyDog"',
+        projectText: 'Technologies are used: HTML, SCSS, JavaScript',
+        aHref: 'https://romasta915.github.io/LazyDog/index.html',
+        projectType: 'javascript',
+        hasAdaptive: true
     }
 ]
+
+// projectsArr = [
+//     {
+//         id: 1,
+//         imgPath: './projects/Projects_photos/lazy-dog.jpg',
+//         projectTitle: 'Site for "LazyDog"',
+//         projectText: '*Adaptive site <br> Technologies are used: HTML, SCSS, JavaScript',
+//         aHref: 'https://romasta915.github.io/LazyDog/index.html',
+//         projectType: 'javascript'
+//     }
+// ]
 
 let projects__content = document.querySelector('.projects__content')
 
 for (const e of projectsArr) {
+
+    let adaptiveStr
+
+    e.hasAdaptive ?  adaptiveStr = 'adaptive' : adaptiveStr = ''
 
     projects__content.innerHTML += `
     <div class="projects__item projects__item${e.id} mix ${e.projectType}">
@@ -176,7 +207,7 @@ for (const e of projectsArr) {
             <img src="${e.imgPath}">
         </div>
         <div class="project__description project__description${e.id}">
-            <div class="project__text-wrap">
+            <div class="project__text-wrap" data-hasAdaptive="${adaptiveStr}">
                 <div class="project__text-title"> ${e.projectTitle} </div>
                 <div class="project__text"> ${e.projectText} </div>
             </div>
@@ -224,6 +255,7 @@ for (const e of projectsArr) {
         btnActive = false
     });
 
+    // adding clases from 4.elements reveal 
     (e.id % 2 == 0) ? item.classList.add('right-reveal') : item.classList.add('left-reveal');
 }
 
@@ -311,9 +343,9 @@ function showProjectControlsAndUpButton(items) {
     }
 
     if (projectsControlsVisible && oneTrigger == false) {
-        projectsControls.style.display = 'flex'
-        alertify.set('notifier', 'position', 'top-center');
-        alertify.notify('✔ Sorting is unlocked', 'success');
+        // projectsControls.style.display = 'flex'
+        // alertify.set('notifier', 'position', 'top-center');
+        // alertify.notify('✔ Sorting is unlocked', 'success');
         oneTrigger = true
 
         upButton.style.transform = 'translateY(0px)'
@@ -347,6 +379,3 @@ function сalculatePercents(items) {
     }
 }
 сalculatePercents(onlyProjectsTypes)
-
-// 
-

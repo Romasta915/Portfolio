@@ -196,6 +196,16 @@
                             @include fontProcessing('Roboto mono', 6rem, 400);
                             padding-bottom: 3rem;
                         }
+
+                        &::before {
+                            content: attr(data-hasAdaptive);
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            background-color: #238636;
+                            padding: 0 3rem;
+                            font-size: 2.5rem;
+                        }
                     }
 
 

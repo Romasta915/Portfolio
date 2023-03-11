@@ -126,24 +126,33 @@ body::-webkit-scrollbar {
 }
 
 .projects {
-    background-color: rgb(27, 36, 47);
-    // background: linear-gradient(45deg, rgb(27, 36, 47), rgb(36, 46, 60), rgb(27, 36, 47));
-    // background-size: 400% 400%;
-    // animation: bgLinear 5s ease infinite;
+    position: relative;
+    // background-color: rgb(27, 36, 47);
+    // 1b242f
+    background: linear-gradient(45deg, #1b242f, #2c394a, #29211e);
+    background-size: 400% 400%;
+    animation: bgLinear 25s ease infinite;
 
-    // @keyframes bgLinear {
-    //     0% {
-    //         background-position: 0% 50%;
-    //     }
+    @keyframes bgLinear {
+        0% {
+            background-position: 0% 50%;
+        }
 
-    //     50% {
-    //         background-position: 100% 50%;
-    //     }
+        50% {
+            background-position: 100% 50%;
+        }
 
-    //     100% {
-    //         background-position: 0% 50%;
-    //     }
-    // }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    #particle-canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
     .projects__title {
         padding: 2.5rem 0 1rem 0;
@@ -174,9 +183,10 @@ body::-webkit-scrollbar {
 
     .projects__controls {
         position: relative;
-        display: none;
-        padding-bottom: 50px;
         color: $mainColor;
+        display: flex;
+        transition: all 1s;
+        padding-bottom: 50px;
 
         .radios-filter {
             display: flex;
@@ -221,7 +231,7 @@ body::-webkit-scrollbar {
                     }
 
                     .technical-per._active {
-                        animation: fillBars 2s 1;
+                        animation: fillBars 5s 1;
                     }
 
                     .technical-per::before {
@@ -307,16 +317,21 @@ body::-webkit-scrollbar {
         flex-wrap: wrap;
         justify-content: space-around;
         overflow: hidden;
+        padding-bottom: 5rem;
+
+        // margin for all items except the last 2
+        .projects__item:not(:nth-last-child(-n+2)) {
+            margin: 0 0 5rem 0;
+        }
 
         .projects__item {
             height: 30rem;
             width: 55rem;
             position: relative;
-            margin: 0 0 5rem 0;
 
             &:hover .project__description {
                 opacity: 1;
-                transition: all 0.3s;
+                transition: opacity 0.3s;
             }
 
             .project__img {
@@ -338,7 +353,7 @@ body::-webkit-scrollbar {
                 z-index: 1;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: rgba(0, 0, 0, 0.9);
                 @include fontProcessing('Roboto mono', 2rem, 400);
                 opacity: 0;
 
@@ -347,6 +362,7 @@ body::-webkit-scrollbar {
                     padding: 1rem 1rem 0 1rem;
                     height: 24rem;
                     overflow-y: scroll;
+                    position: relative;
 
                     &::-webkit-scrollbar-thumb {
                         background-color: rgb(189, 15, 15);
@@ -360,6 +376,16 @@ body::-webkit-scrollbar {
                     .project__text-title {
                         @include fontProcessing('Roboto mono', 3rem, 400);
                         padding-bottom: 1.5rem;
+                    }
+
+                    &::before {
+                        content: attr(data-hasAdaptive);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: #238636;
+                        padding: 0 1rem;
+                        font-size: 1rem;
                     }
                 }
 
@@ -381,24 +407,19 @@ body::-webkit-scrollbar {
 }
 
 .footer {
+    box-shadow: inset 0 5px 5px rgb(49, 62, 81);
     height: 10rem;
     width: 100%;
     background-color: rgb(36, 46, 60);
     display: flex;
     justify-content: center;
-    position: relative;
 
     .footer__wrap {
         height: 100%;
-        width: 30%;
+        width: 40%;
         display: flex;
         justify-content: space-around;
         align-items: center;
-    }
-
-    .footer_icon {
-        width: 5rem;
-        height: 5rem;
     }
 
     .footer__back {
@@ -409,15 +430,23 @@ body::-webkit-scrollbar {
         height: 50px;
         background-color: transparent;
         transform: translateY(200px);
-        transition: 1.5s;
+        transition: transform 1.5s;
+        transition: background-color 0.5s;
         border-radius: 100%;
         z-index: 3;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px $mainColor;
+        }
 
         img {
             width: 100%;
             height: 100%;
         }
+
     }
+
 }
 
 @import './adaptive';
