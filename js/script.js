@@ -116,7 +116,7 @@ window.onload = () => {
 projectsArr = [
     {
         id: 1,
-        imgPath: './projects/Projects_photos/restoran.jpg',
+        imgPath: './images/Projects_photos/restoran.jpg',
         projectTitle: 'Site for "Best home food"',
         projectText: 'Made with: HTML, CSS, JavaScript Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae! ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae!',
         aHref: './projects/1restoran (best home food)',
@@ -125,7 +125,7 @@ projectsArr = [
     },
     {
         id: 2,
-        imgPath: './projects/Projects_photos/landx.jpg',
+        imgPath: './images/Projects_photos/landx.jpg',
         projectTitle: 'Site for "LandX"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/2LandX',
@@ -134,7 +134,7 @@ projectsArr = [
     },
     {
         id: 3,
-        imgPath: './projects/Projects_photos/foreign_exchange.png',
+        imgPath: './images/Projects_photos/foreign_exchange.png',
         projectTitle: 'Site for "Foreign exchange"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/3Foreing exchange',
@@ -143,7 +143,7 @@ projectsArr = [
     },
     {
         id: 4,
-        imgPath: './projects/Projects_photos/moviepedia.png',
+        imgPath: './images/Projects_photos/moviepedia.png',
         projectTitle: 'Site for "Moviepedia"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/4MoviePedia',
@@ -152,7 +152,7 @@ projectsArr = [
     },
     {
         id: 5,
-        imgPath: './projects/Projects_photos/css_generator.png',
+        imgPath: './images/Projects_photos/css_generator.png',
         projectTitle: 'Site for "CSS Generator"',
         projectText: 'Made with: HTML, CSS, JavaScript',
         aHref: './projects/5CSS Generator',
@@ -161,7 +161,7 @@ projectsArr = [
     },
     {
         id: 6,
-        imgPath: './projects/Projects_photos/audio_player.jpg',
+        imgPath: './images/Projects_photos/audio_player.jpg',
         projectTitle: 'Site for "Audio player"',
         projectText: 'Made with: HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript',
         aHref: './projects/6Audio player',
@@ -170,7 +170,7 @@ projectsArr = [
     },
     {
         id: 7,
-        imgPath: './projects/Projects_photos/lazy-dog.jpg',
+        imgPath: './images/Projects_photos/lazy-dog.jpg',
         projectTitle: 'Site for "LazyDog"',
         projectText: 'Technologies are used: HTML, SCSS, JavaScript',
         aHref: 'https://romasta915.github.io/LazyDog/index.html',
