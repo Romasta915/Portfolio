@@ -1,0 +1,77 @@
+/* 0 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    /* background: linear-gradient(to right, #2C5364, #203A43, #0F2027); */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+}
+
+.margin-top {
+    margin-top: 15px;
+}
+
+/* 1 */
+.mytitle {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+}
+
+/* 2 */
+.my-all-cont {
+    padding: 0 20px 20px 20px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    padding-bottom: 300px;
+}
+
+.box-container .box {
+    width: 300px;
+    min-height: 200px;
+    border: 5px groove rgb(255, 255, 255);
+    color: white;
+    overflow-wrap: break-word;
+    user-select: text;
+    font-size: 30px;
+    transform: translate(12px, 50%);
+}
+
+/* 3 */
+.code-container {
+    position: relative;
+    user-select: text;
+}
+
+.code-output {
+    width: 100%;
+    min-height: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+}
+
+.copy-button {
+    position: absolute;
+    top: -1px;
+    right: 40px;
+    border-radius: 0 0 8px 8px;
+    height: 50px;
+}
+
+/* for js */
+.outsCSS {
+    font-size: 20px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

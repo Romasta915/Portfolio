@@ -367,8 +367,7 @@
 
 /* !!! rainbow icons */
 
-.footer__socials {
-  font-size: 4rem;
+.colored-icons {
   background-color: #18191f;
   color: #fff;
   box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
@@ -380,18 +379,11 @@
   animation: animate 3s linear infinite;
   text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
     0 0 200px #0072ff;
-}
 
-.icon1 {
-  animation-delay: 0.3s;
-}
-
-.icon2 {
-  animation-delay: 0.7s;
-}
-
-.icon3 {
-  animation-delay: 0.1s;
+  @media (max-width: 768px) {
+    border-radius: 7.5px;
+    padding: 5px 7.5px;
+  }
 }
 
 @keyframes animate {

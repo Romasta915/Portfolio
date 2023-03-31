@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviePedia</title>
+    <link rel="icon" href="./img/35039_movie_icon.png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="findMovie__cont">
+            <div class="movieTitleCont">
+                <label for="movieTitle">Title:</label>
+                <input type="text" id="movieTitle" value="Spider man">
+            </div>
+            <div class="movieTypeCont">
+                <label for="movieType">Type:</label>
+                <select id="movieType">
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+            </div>
+            <div class="movieBtn__cont">
+                <input type="button" class="detailsBtn" id="btnFind" value="Find Movie">
+            </div>
+        </div>
+        <div class="loader-cont">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="movies__cont">
+            
+        </div>
+        <div class="movies__modal">
+            
+        </div>
+    </div>
+
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

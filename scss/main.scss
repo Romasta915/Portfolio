@@ -80,8 +80,8 @@ body::-webkit-scrollbar {
         @include fontProcessing('Roboto Mono', 4rem, 400);
         padding: 1rem;
         text-align: center;
-        user-select: none;
         color: #FFFFFF;
+        opacity: 0;
 
         span {
             user-select: text;
@@ -103,6 +103,7 @@ body::-webkit-scrollbar {
             display: flex;
             align-items: center;
             border: 0.2rem rgba(0, 3, 249, ) solid;
+            opacity: 0;
 
             img {
                 padding-left: 1rem;
@@ -128,10 +129,9 @@ body::-webkit-scrollbar {
 .projects {
     position: relative;
     // background-color: rgb(27, 36, 47);
-    // 1b242f
     background: linear-gradient(45deg, #1b242f, #2c394a, #29211e);
     background-size: 400% 400%;
-    animation: bgLinear 25s ease infinite;
+    animation: bgLinear 15s ease infinite;
 
     @keyframes bgLinear {
         0% {
@@ -147,38 +147,9 @@ body::-webkit-scrollbar {
         }
     }
 
-    #particle-canvas {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-
     .projects__title {
         padding: 2.5rem 0 1rem 0;
         margin: 0 0 4rem 0;
-    }
-
-    .radio-button {
-        -webkit-appearance: none;
-        appearance: none;
-
-        position: absolute;
-        width: 1.3rem;
-        height: 1.3rem;
-        top: 1.3rem;
-        right: -2.5rem;
-
-        border-radius: 100%;
-        transition: 0.3s;
-        border: 0.3rem solid rgb(27, 36, 47);
-        background-color: rgb(27, 36, 47);
-        outline: 0.2rem solid white;
-    }
-
-    .radio-button:checked {
-        border: 0.4rem solid $mainColor;
-        background-color: white;
     }
 
     .projects__controls {
@@ -187,6 +158,28 @@ body::-webkit-scrollbar {
         display: flex;
         transition: all 1s;
         padding-bottom: 50px;
+
+        .radio-button {
+            -webkit-appearance: none;
+            appearance: none;
+
+            position: absolute;
+            width: 1.3rem;
+            height: 1.3rem;
+            top: 1.3rem;
+            right: -2.5rem;
+
+            border-radius: 100%;
+            transition: 0.3s;
+            border: 0.3rem solid rgb(27, 36, 47);
+            background-color: rgb(27, 36, 47);
+            outline: 0.2rem solid white;
+        }
+
+        .radio-button:checked {
+            border: 0.4rem solid $mainColor;
+            background-color: white;
+        }
 
         .radios-filter {
             display: flex;
@@ -230,7 +223,7 @@ body::-webkit-scrollbar {
                         position: relative;
                     }
 
-                    .technical-per._active {
+                    .technical-per._anim-init {
                         animation: fillBars 5s 1;
                     }
 
@@ -331,7 +324,7 @@ body::-webkit-scrollbar {
 
             &:hover .project__description {
                 opacity: 1;
-                transition: opacity 0.3s;
+                transition: all 0.5s;
             }
 
             .project__img {
@@ -353,9 +346,10 @@ body::-webkit-scrollbar {
                 z-index: 1;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
+                background-color: rgba(0, 0, 0, 0.8);
                 @include fontProcessing('Roboto mono', 2rem, 400);
                 opacity: 0;
+                transition: all 0.5s;
 
                 .project__text-wrap {
                     text-align: center;
@@ -394,12 +388,27 @@ body::-webkit-scrollbar {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    // justify-content: end;
+                    position: relative;
 
                     .cybr-btn_settings {
-                        min-width: 30rem;
+                        width: 30rem;
                         height: 5rem;
                         font-size: 2rem;
                     }
+
+                    .toRepo-btn {
+                        position: absolute;
+                        top: 5.3px;
+                        left: 78px;
+                        // left: 212px;
+                        width: 5rem;
+                        height: 3rem;
+                        --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 100% 100%, 100% 100%, 8% 100%, 0 70%);
+                        --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 100% 100%, 100% 100%, 8% 95%, 0 70%);
+                        --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 100% 100%, 100% 100%, 8% 100%, 0 78%);
+                    }
+
                 }
             }
         }
@@ -420,6 +429,22 @@ body::-webkit-scrollbar {
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        .footer__social-icons {
+            font-size: 4rem;
+        }
+
+        .icon1 {
+            animation-delay: 0.3s;
+        }
+
+        .icon2 {
+            animation-delay: 0.7s;
+        }
+
+        .icon3 {
+            animation-delay: 0.1s;
+        }
     }
 
     .footer__back {
@@ -429,11 +454,10 @@ body::-webkit-scrollbar {
         width: 50px;
         height: 50px;
         background-color: transparent;
-        transform: translateY(200px);
-        transition: transform 1.5s;
         transition: background-color 0.5s;
         border-radius: 100%;
         z-index: 3;
+        opacity: 0;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);

@@ -44,28 +44,27 @@
         .radio-button {
             -webkit-appearance: none;
             appearance: none;
-    
+
             position: absolute;
             width: 2.6rem;
             height: 2.6rem;
             top: 2.6rem;
             right: -5rem;
-    
+
             border-radius: 100%;
             transition: 0.3s;
             border: 0.6rem solid rgb(27, 36, 47);
             background-color: rgb(27, 36, 47);
             outline: 0.4rem solid white;
         }
-    
+
         .radio-button:checked {
             border: 0.8rem solid $mainColor;
             background-color: white;
         }
 
         .projects__controls {
-            display: none;
-            padding-bottom: 50px;
+            padding-bottom: 5rem;
             // new styles
             position: relative;
 
@@ -144,13 +143,13 @@
                         height: 9rem;
                         padding: 1rem;
 
-                        span { 
+                        span {
                             margin-top: 0px;
                         }
                     }
                 }
 
-            
+
             }
         }
 
@@ -162,6 +161,7 @@
 
                 &:hover .project__description {
                     opacity: 0;
+                    transition: all 1s;
                 }
 
                 .project-mobileBtn {
@@ -185,6 +185,7 @@
                     opacity: 0;
                     transform: translateX(150%);
                     @include fontProcessing('Roboto mono', 4rem, 400);
+                    transition: all 1s;
 
                     .project__text-wrap {
                         text-align: center;
@@ -221,6 +222,13 @@
                                 font-size: 2rem;
                             }
                         }
+
+                        .toRepo-btn {
+                            top: 0;
+                            left: 91px;
+                            width: 10rem;
+                            height: 6rem;  
+                        }
                     }
                 }
             }
@@ -230,19 +238,19 @@
     .footer {
         height: 20rem;
 
+        @media (max-width: 425px) {
+            .footer__back {
+                display: none;
+            }
+        }
+
         .footer__wrap {
             height: 100%;
             width: 60%;
-        }
 
-        .footer_icon {
-            width: 10rem;
-            height: 10rem;
-        }
-
-        .footer__back {
-            width: 60px;
-            height: 60px;
+            .footer__social-icons {
+                font-size: 8rem;
+            }
         }
     }
 }

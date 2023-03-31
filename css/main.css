@@ -86,7 +86,8 @@ p {
 img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 button {
@@ -164,7 +165,8 @@ ul li {
   left: 0;
   right: 0;
   bottom: 0;
-  clip-path: var(--clip);
+  -webkit-clip-path: var(--clip);
+          clip-path: var(--clip);
   z-index: -1;
 }
 
@@ -197,7 +199,8 @@ ul li {
   bottom: calc(var(--border) * -1);
   background: var(--shadow-primary);
   text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
-  clip-path: var(--clip);
+  -webkit-clip-path: var(--clip);
+          clip-path: var(--clip);
   animation: glitch 2s infinite;
   display: none;
 }
@@ -213,69 +216,85 @@ ul li {
   right: calc(var(--border) * 1);
   bottom: calc(var(--border) * 1);
   left: calc(var(--border) * 1);
-  clip-path: var(--clip);
+  -webkit-clip-path: var(--clip);
+          clip-path: var(--clip);
   background: var(--primary);
   z-index: -1;
 }
 
 @keyframes glitch {
   0% {
-    clip-path: var(--clip-one);
+    -webkit-clip-path: var(--clip-one);
+            clip-path: var(--clip-one);
   }
   2%, 8% {
-    clip-path: var(--clip-two);
+    -webkit-clip-path: var(--clip-two);
+            clip-path: var(--clip-two);
     transform: translate(calc(var(--shimmy-distance) * -1%), 0);
   }
   6% {
-    clip-path: var(--clip-two);
+    -webkit-clip-path: var(--clip-two);
+            clip-path: var(--clip-two);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   9% {
-    clip-path: var(--clip-two);
+    -webkit-clip-path: var(--clip-two);
+            clip-path: var(--clip-two);
     transform: translate(0, 0);
   }
   10% {
-    clip-path: var(--clip-three);
+    -webkit-clip-path: var(--clip-three);
+            clip-path: var(--clip-three);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   13% {
-    clip-path: var(--clip-three);
+    -webkit-clip-path: var(--clip-three);
+            clip-path: var(--clip-three);
     transform: translate(0, 0);
   }
   14%, 21% {
-    clip-path: var(--clip-four);
+    -webkit-clip-path: var(--clip-four);
+            clip-path: var(--clip-four);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   25% {
-    clip-path: var(--clip-five);
+    -webkit-clip-path: var(--clip-five);
+            clip-path: var(--clip-five);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   30% {
-    clip-path: var(--clip-five);
+    -webkit-clip-path: var(--clip-five);
+            clip-path: var(--clip-five);
     transform: translate(calc(var(--shimmy-distance) * -1%), 0);
   }
   35%, 45% {
-    clip-path: var(--clip-six);
+    -webkit-clip-path: var(--clip-six);
+            clip-path: var(--clip-six);
     transform: translate(calc(var(--shimmy-distance) * -1%));
   }
   40% {
-    clip-path: var(--clip-six);
+    -webkit-clip-path: var(--clip-six);
+            clip-path: var(--clip-six);
     transform: translate(calc(var(--shimmy-distance) * 1%));
   }
   50% {
-    clip-path: var(--clip-six);
+    -webkit-clip-path: var(--clip-six);
+            clip-path: var(--clip-six);
     transform: translate(0, 0);
   }
   55% {
-    clip-path: var(--clip-seven);
+    -webkit-clip-path: var(--clip-seven);
+            clip-path: var(--clip-seven);
     transform: translate(calc(var(--shimmy-distance) * 1%), 0);
   }
   60% {
-    clip-path: var(--clip-seven);
+    -webkit-clip-path: var(--clip-seven);
+            clip-path: var(--clip-seven);
     transform: translate(0, 0);
   }
   31%, 61%, 100% {
-    clip-path: var(--clip-four);
+    -webkit-clip-path: var(--clip-four);
+            clip-path: var(--clip-four);
   }
 }
 .cybr-btn:nth-of-type(2) {
@@ -438,8 +457,7 @@ ul li {
   }
 }
 /* !!! rainbow icons */
-.footer__socials {
-  font-size: 4rem;
+.colored-icons {
   background-color: #18191f;
   color: #fff;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5019607843), 10px 1px 12px rgba(0, 0, 0, 0.5019607843), 2px 2px 10px rgba(0, 0, 0, 0.5019607843), 2px 2px 3px rgba(0, 0, 0, 0.5019607843), inset 2px 2px 10px rgba(0, 0, 0, 0.5019607843), inset 2px 2px 10px rgba(0, 0, 0, 0.5019607843), inset 2px 2px 10px rgba(0, 0, 0, 0.5019607843), inset 2px 2px 10px rgba(0, 0, 0, 0.5019607843);
@@ -448,17 +466,11 @@ ul li {
   animation: animate 3s linear infinite;
   text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff, 0 0 200px #0072ff;
 }
-
-.icon1 {
-  animation-delay: 0.3s;
-}
-
-.icon2 {
-  animation-delay: 0.7s;
-}
-
-.icon3 {
-  animation-delay: 0.1s;
+@media (max-width: 768px) {
+  .colored-icons {
+    border-radius: 7.5px;
+    padding: 5px 7.5px;
+  }
 }
 
 @keyframes animate {
@@ -549,11 +561,13 @@ body::-webkit-scrollbar {
   font-weight: 400;
   padding: 1rem;
   text-align: center;
-  user-select: none;
   color: #FFFFFF;
+  opacity: 0;
 }
 .hero__text span {
-  user-select: text;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
   font-weight: 900;
   letter-spacing: 3px;
 }
@@ -572,6 +586,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   border: 0.2rem rgb(0, 3, 249) solid;
+  opacity: 0;
 }
 .hero__wrap-btn .hero__btn img {
   padding-left: 1rem;
@@ -591,7 +606,7 @@ body::-webkit-scrollbar {
   position: relative;
   background: linear-gradient(45deg, #1b242f, #2c394a, #29211e);
   background-size: 400% 400%;
-  animation: bgLinear 25s ease infinite;
+  animation: bgLinear 15s ease infinite;
 }
 @keyframes bgLinear {
   0% {
@@ -604,19 +619,21 @@ body::-webkit-scrollbar {
     background-position: 0% 50%;
   }
 }
-.projects #particle-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 .projects .projects__title {
   padding: 2.5rem 0 1rem 0;
   margin: 0 0 4rem 0;
 }
-.projects .radio-button {
+.projects .projects__controls {
+  position: relative;
+  color: rgb(0, 3, 249);
+  display: flex;
+  transition: all 1s;
+  padding-bottom: 50px;
+}
+.projects .projects__controls .radio-button {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   position: absolute;
   width: 1.3rem;
   height: 1.3rem;
@@ -628,16 +645,9 @@ body::-webkit-scrollbar {
   background-color: rgb(27, 36, 47);
   outline: 0.2rem solid white;
 }
-.projects .radio-button:checked {
+.projects .projects__controls .radio-button:checked {
   border: 0.4rem solid rgb(0, 3, 249);
   background-color: white;
-}
-.projects .projects__controls {
-  position: relative;
-  color: rgb(0, 3, 249);
-  display: flex;
-  transition: all 1s;
-  padding-bottom: 50px;
 }
 .projects .projects__controls .radios-filter {
   display: flex;
@@ -680,7 +690,7 @@ body::-webkit-scrollbar {
   border-radius: 0.3rem;
   position: relative;
 }
-.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per._active {
+.projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per._anim-init {
   animation: fillBars 5s 1;
 }
 .projects .projects__controls .radios-filter .button-cont .technical-bar .technical-per::before {
@@ -765,14 +775,15 @@ body::-webkit-scrollbar {
 }
 .projects .projects__content .projects__item:hover .project__description {
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: all 0.5s;
 }
 .projects .projects__content .projects__item .project__img {
   width: 100%;
   height: 100%;
 }
 .projects .projects__content .projects__item .project__img img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .projects .projects__content .projects__item .project-mobileBtn {
   display: none;
@@ -783,11 +794,12 @@ body::-webkit-scrollbar {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   font-family: "Roboto mono", sans-serif;
   font-size: 2rem;
   font-weight: 400;
   opacity: 0;
+  transition: all 0.5s;
 }
 .projects .projects__content .projects__item .project__description .project__text-wrap {
   text-align: center;
@@ -823,11 +835,22 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .projects .projects__content .projects__item .project__description .project__btn-wrap .cybr-btn_settings {
-  min-width: 30rem;
+  width: 30rem;
   height: 5rem;
   font-size: 2rem;
+}
+.projects .projects__content .projects__item .project__description .project__btn-wrap .toRepo-btn {
+  position: absolute;
+  top: 5.3px;
+  left: 78px;
+  width: 5rem;
+  height: 3rem;
+  --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 100% 100%, 100% 100%, 8% 100%, 0 70%);
+  --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 100% 100%, 100% 100%, 8% 95%, 0 70%);
+  --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 100% 100%, 100% 100%, 8% 100%, 0 78%);
 }
 
 .footer {
@@ -845,6 +868,18 @@ body::-webkit-scrollbar {
   justify-content: space-around;
   align-items: center;
 }
+.footer .footer__wrap .footer__social-icons {
+  font-size: 4rem;
+}
+.footer .footer__wrap .icon1 {
+  animation-delay: 0.3s;
+}
+.footer .footer__wrap .icon2 {
+  animation-delay: 0.7s;
+}
+.footer .footer__wrap .icon3 {
+  animation-delay: 0.1s;
+}
 .footer .footer__back {
   position: fixed;
   right: 30px;
@@ -852,11 +887,10 @@ body::-webkit-scrollbar {
   width: 50px;
   height: 50px;
   background-color: transparent;
-  transform: translateY(200px);
-  transition: transform 1.5s;
   transition: background-color 0.5s;
   border-radius: 100%;
   z-index: 3;
+  opacity: 0;
 }
 .footer .footer__back:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -905,7 +939,8 @@ body::-webkit-scrollbar {
   }
   .projects .radio-button {
     -webkit-appearance: none;
-    appearance: none;
+    -moz-appearance: none;
+         appearance: none;
     position: absolute;
     width: 2.6rem;
     height: 2.6rem;
@@ -922,8 +957,7 @@ body::-webkit-scrollbar {
     background-color: white;
   }
   .projects .projects__controls {
-    display: none;
-    padding-bottom: 50px;
+    padding-bottom: 5rem;
     position: relative;
   }
   .projects .projects__controls .radios-filter {
@@ -1009,6 +1043,7 @@ body::-webkit-scrollbar {
   }
   .projects .projects__content .projects__item:hover .project__description {
     opacity: 0;
+    transition: all 1s;
   }
   .projects .projects__content .projects__item .project-mobileBtn {
     position: absolute;
@@ -1022,7 +1057,9 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
     font-family: Cyber;
     cursor: pointer;
   }
@@ -1032,6 +1069,7 @@ body::-webkit-scrollbar {
     font-family: "Roboto mono", sans-serif;
     font-size: 4rem;
     font-weight: 400;
+    transition: all 1s;
   }
   .projects .projects__content .projects__item .project__description .project__text-wrap {
     text-align: center;
@@ -1065,19 +1103,27 @@ body::-webkit-scrollbar {
   .projects .projects__content .projects__item .project__description .project__btn-wrap .cybr-btn_settings .cybr-btn__tag {
     font-size: 2rem;
   }
+  .projects .projects__content .projects__item .project__description .project__btn-wrap .toRepo-btn {
+    top: 0;
+    left: 91px;
+    width: 10rem;
+    height: 6rem;
+  }
   .footer {
     height: 20rem;
   }
+}
+@media (max-width: 768px) and (max-width: 425px) {
+  .footer .footer__back {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
   .footer .footer__wrap {
     height: 100%;
     width: 60%;
   }
-  .footer .footer_icon {
-    width: 10rem;
-    height: 10rem;
-  }
-  .footer .footer__back {
-    width: 60px;
-    height: 60px;
+  .footer .footer__wrap .footer__social-icons {
+    font-size: 8rem;
   }
 }

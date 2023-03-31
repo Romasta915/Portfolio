@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.1.3-dist/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"> -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="taskCont">
+        <div class="row">
+            <div class="col-4 left">
+                <div class="row">
+                    <div class="converter-cont">
+                        <div class="row">
+                            <div class="converter-title">Contverter</div>
+                        </div>
+                        <div class="row border-right">
+                            <div class="col-4 converter-cell">From</div>
+                            <div class="col-8 converter-cell">
+                                <select id="fromSelect" class="form-control">
+                                    <option value="EUR">
+                                        EUR
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row border-right">
+                            <div class="col-4 converter-cell">To</div>
+                            <div class="col-8 converter-cell">
+                                <select id="toSelect" class="form-control">
+                                    <option value="UAH">
+                                        UAH
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row border-right">
+                            <div class="col-4 converter-cell">Date</div>
+                            <div class="col-8 converter-cell">
+                                <input type="date" class="form-control" id="dateInput">
+                            </div>
+                        </div>
+                        <div class="row border-right">
+                            <div class="col-4 converter-cell">Сonversion amount</div>
+                            <div class="col-8 converter-cell">
+                                <input type="number" class="form-control" id="conversionAmount" value="1">
+                            </div>
+                        </div>
+                        <div class="row border-right">
+                            <div class="col-4 converter-cell justify-wrap">
+                                <input type="button" value="Ok" class="btnOk" id="converterOk">
+                            </div>
+                            <div class="col-8 converter-cell justify-wrap">
+                                <div class="converter-output" id="converterOutput">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="latestCont" id="latestCont">
+                        <div class="row">
+                            <div class="converter-title" id="latestTitle">Latest</div>
+                        </div>
+                        <div class="row">
+                            <div id="latestContent">
+                                <div id="latestContentTd" class="col-4"></div>
+                                <div id="latestContentTh" class="col-8"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 right">
+                <div class="row">
+                    <div class="converter-title">Month Rates</div>
+                </div>
+                <div class="row border-right">
+                    <div class="col-4 converter-cell">Base</div>
+                    <div class="col-8 converter-cell">
+                        <select id="monthBase" class="form-control">
+                            <option value="EUR">
+                                EUR
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row border-right">
+                    <div class="col-4 converter-cell">Currency</div>
+                    <div class="col-8 converter-cell">
+                        <select id="monthCurrency" class="form-control">
+                            <option value="UAH">
+                                UAH
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row border-right">
+                    <div class="col-12 converter-cell">
+                        <div class="col-4" style="margin-right: 30px;">
+                            <label for="monthInput">From month</label>
+                            <input type="date" class="form-control" id="monthInput">
+                        </div>
+                        <div class="col-4" style="margin-right: 30px;">
+                            <label for="monthInput">To month</label>
+                            <input  type="date" class="form-control" id="monthInputEnd">
+                        </div>
+                        <div class="col-3">
+                            <input style="margin-left: 10px;" type="button" id="monthOk" class="btnOk" value="Ok">
+                        </div>
+                    </div>
+                </div>
+                <div class="row diagram-row" id="canvasCont">
+                    <canvas id="myChart" width="400" height="217"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./bootstrap-5.1.3-dist/bootstrap.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

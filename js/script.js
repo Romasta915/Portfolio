@@ -1,15 +1,15 @@
 // main js file:
 // ========== scripts ==========
 // 1.bg canvas 
-// 2.loader
+// 2.loader, animation on load
 // 3.render projects 
 // 4.elements reveal 
 // 5.setting of sorting, filtering (mixitup) 
-// 6.custom elements reveal (freelancer for life)
-// 7.show project controls and up button
+// 6.on scroll add animation classes (freelancer for life)
+// 7.show something in end projects
 // 8.сalculation of technology percentages
 
-// ========== 1.bg canvas ==========
+// ========== bg canvas ==========
 const canvas = document.getElementById("hero-canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -103,116 +103,53 @@ window.addEventListener("resize", function () {
     gradient.addColorStop(0.5, "yellow");
 });
 
-// ========== 2.loader ==========
+// ========== loader, animation on load ==========
 let Loader = document.querySelector('.page-loader')
+let heroText = document.querySelector('.hero__text')
+let heroBtn = document.querySelector('.hero__btn')
 
-window.onload = () => {
-    setTimeout(() => {
-        Loader.style.display = 'none'
-    }, 300);
-}
+window.addEventListener('load', () => {
+    setTimeout(() => Loader.style.display = 'none', 300);
+    setTimeout(() => heroText.classList.add('magictime', 'vanishIn'), 500);
+    setTimeout(() => heroBtn.classList.add('magictime', 'vanishIn'), 1500);
+})
 
-// ========== 3.render projects ==========
-projectsArr = [
-    {
-        id: 1,
-        imgPath: './images/Projects_photos/restoran.jpg',
-        projectTitle: 'Site for "Best home food"',
-        projectText: 'Made with: HTML, CSS, JavaScript Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae! ipsum dolor sit amet consectetur adipisicing elit. Eligendi, incidunt aspernatur vitae adipisci iure tenetur itaque assumenda? Eum laboriosam illo a modi, nisi qui quia recusandae quidem quos accusamus dolore cumque ullam similique placeat ex quae. Rem porro quas sapiente minima? Dolorem ex quidem, corporis a nisi doloribus soluta beatae!',
-        aHref: './projects/1restoran (best home food)',
-        projectType: 'javascript',
-        hasAdaptive: true
-    },
-    {
-        id: 2,
-        imgPath: './images/Projects_photos/landx.jpg',
-        projectTitle: 'Site for "LandX"',
-        projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/2LandX',
-        projectType: 'javascript',
-        hasAdaptive: false
-    },
-    {
-        id: 3,
-        imgPath: './images/Projects_photos/foreign_exchange.png',
-        projectTitle: 'Site for "Foreign exchange"',
-        projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/3Foreing exchange',
-        projectType: 'react',
-        hasAdaptive: true
-    },
-    {
-        id: 4,
-        imgPath: './images/Projects_photos/moviepedia.png',
-        projectTitle: 'Site for "Moviepedia"',
-        projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/4MoviePedia',
-        projectType: 'react',
-        hasAdaptive: true
-    },
-    {
-        id: 5,
-        imgPath: './images/Projects_photos/css_generator.png',
-        projectTitle: 'Site for "CSS Generator"',
-        projectText: 'Made with: HTML, CSS, JavaScript',
-        aHref: './projects/5CSS Generator',
-        projectType: 'angular',
-        hasAdaptive: true
-    },
-    {
-        id: 6,
-        imgPath: './images/Projects_photos/audio_player.jpg',
-        projectTitle: 'Site for "Audio player"',
-        projectText: 'Made with: HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript JavaScriptHTML, CSS, JavaScript HTML, CSS, JavaScript',
-        aHref: './projects/6Audio player',
-        projectType: 'angular',
-        hasAdaptive: true
-    },
-    {
-        id: 7,
-        imgPath: './images/Projects_photos/lazy-dog.jpg',
-        projectTitle: 'Site for "LazyDog"',
-        projectText: 'Technologies are used: HTML, SCSS, JavaScript',
-        aHref: 'https://romasta915.github.io/LazyDog/index.html',
-        projectType: 'javascript',
-        hasAdaptive: true
-    }
-]
-
-// projectsArr = [
-//     {
-//         id: 1,
-//         imgPath: './projects/Projects_photos/lazy-dog.jpg',
-//         projectTitle: 'Site for "LazyDog"',
-//         projectText: '*Adaptive site <br> Technologies are used: HTML, SCSS, JavaScript',
-//         aHref: 'https://romasta915.github.io/LazyDog/index.html',
-//         projectType: 'javascript'
-//     }
-// ]
+// ========== render projects ==========
+// для імпорту в нативному js потрібно в тег де підключається скрипт додати 
+// type="module" але буде працювати тільки на сервері або лайв серсері
+// import { projectsArr } from './projects.js'
 
 let projects__content = document.querySelector('.projects__content')
+// projectsArr import from data.js
+for (let index = 0; index < projectsArr.length; index++) {
+    let e = projectsArr[index];
 
-for (const e of projectsArr) {
-
-    let adaptiveStr
-
-    e.hasAdaptive ?  adaptiveStr = 'adaptive' : adaptiveStr = ''
+    let adaptiveStr;
+    e.hasAdaptive ? adaptiveStr = 'adaptive' : adaptiveStr = ''
 
     projects__content.innerHTML += `
-    <div class="projects__item projects__item${e.id} mix ${e.projectType}">
-        <div class="project-mobileBtn project-mobileBtn${e.id}">
+    <div class="projects__item projects__item${index + 1} | mix ${e.projectType}">
+        <div class="project-mobileBtn project-mobileBtn${index + 1}">
             ◀show info
         </div>
         <div class="project__img">
             <img src="${e.imgPath}">
         </div>
-        <div class="project__description project__description${e.id}">
+        <div class="project__description project__description${index + 1}">
             <div class="project__text-wrap" data-hasAdaptive="${adaptiveStr}">
                 <div class="project__text-title"> ${e.projectTitle} </div>
                 <div class="project__text"> ${e.projectText} </div>
             </div>
             <div class="project__btn-wrap">
-                <a href="${e.aHref}" target="_blank">
+                <a href="${e.toRepoLink}" target="_blank">
+                    <button class="cybr-btn toRepo-btn" title="link to the repository">
+                        <i class="bi bi-github"></i>
+                        <span aria-hidden class="cybr-btn__glitch">
+                            <i class="bi bi-github"></i>
+                        </span>
+                    </button>
+                </a>
+                <a href="${e.mainLink}" target="_blank">
                     <button class="cybr-btn cybr-btn_settings">
                         SEE WORK_
                         <span aria-hidden class="cybr-btn__glitch">SEE WORK_</span>
@@ -225,12 +162,10 @@ for (const e of projectsArr) {
     `
 }
 
-for (const e of projectsArr) {
-    let item = document.querySelector(`.projects__item${e.id}`)
-    let btn = document.querySelector(`.project-mobileBtn${e.id}`)
-    let des = document.querySelector(`.project__description${e.id}`)
+for (let index = 0; index < projectsArr.length; index++) {
+    let btn = document.querySelector(`.project-mobileBtn${index + 1}`)
+    let des = document.querySelector(`.project__description${index + 1}`)
     let btnActive = false
-    des.style.transition = 'all 1s'
     btn.style.transition = 'all 1s'
 
     btn.addEventListener('click', () => {
@@ -255,25 +190,9 @@ for (const e of projectsArr) {
         btnActive = false
     });
 
-    // adding clases from 4.elements reveal 
-    (e.id % 2 == 0) ? item.classList.add('right-reveal') : item.classList.add('left-reveal');
 }
 
-// ========== 4.elements reveal ==========
-ScrollReveal().reveal('.left-reveal', {
-    distance: '150%',
-    origin: 'left',
-    duration: 1000,
-    // reset: true
-});
-
-ScrollReveal().reveal('.right-reveal', {
-    distance: '150%',
-    origin: 'right',
-    duration: 1300,
-});
-
-// ========== 5.setting of sorting, filtering (mixitup) ==========
+// ========== setting of sorting, filtering (mixitup) ==========
 let containerEl = document.querySelector('.projects__content');
 let radiosFilter = document.querySelector('.radios-filter');
 let radiosSort = document.querySelector('.radios-sort');
@@ -292,10 +211,10 @@ radiosSort.addEventListener('change', function () {
     mixer.sort(order);
 });
 
-// ========== 6.custom elements reveal (freelancer for life) ==========
-const technicalPerItems = document.querySelectorAll('.anim-item')
+// ========== on scroll add animation classes ==========
+const animItems = document.querySelectorAll('.anim-item')
 
-if (technicalPerItems.length > 0) {
+if (animItems.length > 0) {
     function animOnScroll(items) {
         for (let i = 0; i < items.length; i++) {
             const animItem = items[i]
@@ -311,51 +230,51 @@ if (technicalPerItems.length > 0) {
             }
 
             if ((window.scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
-                animItem.classList.add('_active')
+                if (animItem.classList.contains('technical-per')) animItem.classList.add('_anim-init');
+                // if (animItem.classList.contains('projects__title')) animItem.classList.add('magictime', 'openDownLeftReturn');
+                if (animItem.classList.contains('projects__title')) animItem.classList.add('magictime', 'tinRightIn');
             } else {
                 // якщо елемент має клас _no-repeat то анімація не повторюється
                 if (!animItem.classList.contains('_anim-no-repeat')) {
-                    animItem.classList.remove('_active')
+                    animItem.classList.remove('_anim-init')
                 }
             }
-
         }
     }
 }
 window.addEventListener('scroll', () => {
-    animOnScroll(technicalPerItems)
+    animOnScroll(animItems)
 })
 
-// ========== 7.show project controls and up button ==========
+// ========== show something in end projects ==========
 let allProjects = document.querySelectorAll('.projects__item')
 let projectsControls = document.querySelector('.projects__controls')
-let upButton = document.querySelector('.footer__back')
-let projectsControlsVisible = false
+let footerBack = document.querySelector('.footer__back')
+let pointAtEndProjects = false
 let oneTrigger = false
 
-function showProjectControlsAndUpButton(items) {
+function showSomethingAtEndProjects(items) {
     for (let i = 0; i < items.length; i++) {
         const lastElement = items[items.length - 1];
         let lastElementOffset = window.scrollY + lastElement.getBoundingClientRect().top
         let lastElementHeigth = lastElement.offsetHeight
 
-        window.scrollY >= lastElementOffset - lastElementHeigth ? projectsControlsVisible = true : null;
+        window.scrollY >= lastElementOffset - lastElementHeigth ? pointAtEndProjects = true : null;
     }
 
-    if (projectsControlsVisible && oneTrigger == false) {
-        // projectsControls.style.display = 'flex'
-        // alertify.set('notifier', 'position', 'top-center');
-        // alertify.notify('✔ Sorting is unlocked', 'success');
+    if (pointAtEndProjects && oneTrigger == false) {
+        alertify.set('notifier', 'position', 'top-center');
+        alertify.notify('More soon...', 'success');
         oneTrigger = true
 
-        upButton.style.transform = 'translateY(0px)'
+        footerBack.classList.add('magictime', 'vanishIn');
     }
 }
 window.addEventListener('scroll', () => {
-    showProjectControlsAndUpButton(allProjects)
+    showSomethingAtEndProjects(allProjects)
 })
 
-// ========== 8.сalculation of technology percentages ==========
+// ========== сalculation of technology percentages ==========
 let percentItems = document.querySelectorAll('.technical-per')
 let onlyProjectsTypes = projectsArr.slice(0).map(item => item.projectType)
 
